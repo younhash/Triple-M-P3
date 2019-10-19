@@ -41,7 +41,7 @@ Paste a snippet from your API here that shows the shape of the data
 
 ## React Component Hierarchy
 
-Define the the React components and the architectural design of your app.
+https://www.lucidchart.com/invitations/accept/33710cf4-4487-484f-8bd1-163c24fd7710
 
 ## Priority Matrix
 
