@@ -37,7 +37,7 @@ Paste a snippet from your API here that shows the shape of the data
 
 ## ERD Diagram
 
-- A diagram of your tables and how they relate to each other
+https://docdro.id/ZwV5qIM
 
 ## React Component Hierarchy
 
