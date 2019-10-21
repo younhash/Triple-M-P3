@@ -37,7 +37,7 @@ Paste a snippet from your API here that shows the shape of the data
 
 ## ERD Diagram
 
-https://docdro.id/ZwV5qIM
+https://www.lucidchart.com/invitations/accept/be4e4749-e00d-4e1e-b2de-16ec11283efa
 
 ## React Component Hierarchy
 
