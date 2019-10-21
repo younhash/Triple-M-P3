@@ -2,11 +2,11 @@ import { Model, DataTypes, Sequelize } from 'sequelize'
 
 const sequelize = new Sequelize(
     {
-        database: "bikingtrails_db",
-        dialet: "postgres"
+        "database": "bikingtrails_db",
+        "dialect": "postgres",
     }
 )
-export class Trails extends Model{}
+export class Trail extends Model{}
 
 Trail.init(
     {
