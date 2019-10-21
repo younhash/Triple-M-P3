@@ -5,11 +5,11 @@ Probably the next Facebook
 ## Project Description
 
 This application will allow cyclist to find trails in their local or nearby city. It will give them 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+a list of trails by geolocation and identifying future bike routes they will like to visit. 
 
 ## Wireframes
 
-Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe.
+https://ninjastorage.blob.core.windows.net/html/C32TTFx/4ce915a8-40ed-02cd-3ca9-0b7ed9d1e8a1.html
 
 ## API Snippet
 
@@ -66,7 +66,7 @@ Based on the initial logic defined in the previous sections try and breakdown th
 
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
 
-| Component | Priority | Estimated Time | Time Invetsted | Actual Time |
+| Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Adding Search| M | 2 hrs| hrs | hrs |
 | Adding Trails| H | 4 hrs| hrs | hrs |
