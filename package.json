@@ -22,7 +22,7 @@
     "@babel/node": "^7.6.3",
     "@babel/preset-env": "^7.6.3",
     "babel-watch": "^7.0.0",
-    "add": "^2.0.6",
+    "add": "^2.0.6"
   },
   "keywords": [
     "moutain",
