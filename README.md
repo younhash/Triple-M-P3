@@ -5,7 +5,7 @@ Probably the next Facebook
 ## Project Description
 
 This application will allow cyclist to find trails in their local or nearby city. It will give them 
-Use this section to describe your final project and perhaps any links to relevant sites that help convey the concept and\or functionality.
+a list of trails by geolocation and identifying future bike routes they will like to visit. 
 
 ## Wireframes
 
