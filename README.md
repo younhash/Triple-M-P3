@@ -33,16 +33,14 @@ https://api.opencagedata.com/geocode/v1/json?q=New York City&key=15ff9fe808984f1
 - Edit Item
 - Delete Item
 - Render data on page 
-- Allow user to choose favorites
-- Save their choices in our database
 - Add map api to identify location
 
 #### PostMVP
 
 - Add current weather
 - add pins on map
-
- 
+- Allow user to choose favorites
+- Save their choices in our database
 
 ## ERD Diagram
 
@@ -61,15 +59,21 @@ https://ninjastorage.blob.core.windows.net/html/C32TTFx/578a06b4-20d8-a67e-cd9b-
 
 Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components. 
 
-| Component | Description | 
-| --- | :---: |  
-| Nav          | Renders search, TrailList, CityList |
+|   Component  | Description | 
+| ------------ | :---: |  
+| Nav          | Renders the header/navbar that contains links to TrailList and CityList |
+| TrailList    | Renders search, and a list of trails with basic info  + image |
+| Trail        | Renders info about individual trail: coordinates + address, distance, location on map + trail view |
+| Create Trail | Renders a form to allow user to create a trail |
+| Edit Trail   | Renders a form to allow user to edit trail description |
+| CityList     | Renders search and a list of cities with basic info (# of trails) + image |
+| City         | Renders info about the city: coordinates, all trail id's |
+| CreateUser   | Renders form to create user |
+| EditUser     | Renders form to allow user to edit profile info or delete |
+| User         | Renders user info & favorites |
+| Search       | Renders a search form, which allows to search for a specific city or trail |
+| Map          | Renders a map with trials around a city and A trail route |
 | Footer       | Displays project and team name, creation date. Located at bottom of page |
-| Trail        | Renders information about individual trail: coordinates + address, distance, location on map + trail view |
-| City         | This will render the city include the nav |
-| Create Trail | This will render the create Trail component |
-| Search       | This will render a search bar|
-| Map          | This will render a map  |
 
 
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
@@ -100,7 +104,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 
 ## Additional Libraries
- Use this section to list all supporting libraries and their role in the project. 
+ Axios, react-router-dom, react-router, OpenLayers 
 
 ## Code Snippet
 
