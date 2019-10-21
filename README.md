@@ -1,6 +1,7 @@
 # Project Overview
 # Triple-M-P3
-Probably the next Facebook
+![](https://files.slack.com/files-pri/T0351JZQ0-FPM0UN0SU/image.png)
+      Mountain Biking
 
 ## Project Description
 
@@ -12,9 +13,17 @@ a list of trails by geolocation and identifying future bike routes they will lik
 https://ninjastorage.blob.core.windows.net/html/C32TTFx/4ce915a8-40ed-02cd-3ca9-0b7ed9d1e8a1.html
 
 ## API Snippet
+This API will be used to convert location name and zip to Lattitude and longitude.
+
+https://api.opencagedata.com/geocode/v1/json?q=New York City&key=15ff9fe808984f1ca9d347f81db54d48
+
 
 ```
-Paste a snippet from your API here that shows the shape of the data
+ "bounds": {
+                "northeast": {
+                    "lat": -34.5776519,
+                    "lng": -58.4614548
+                },
 ``` 
 
 #### MVP 
@@ -29,7 +38,6 @@ Paste a snippet from your API here that shows the shape of the data
 
 #### PostMVP
 
-- Add an audio beat to maintain a specific pace.
 - Add current weather
 - add pins on map
 
