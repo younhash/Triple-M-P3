@@ -20,10 +20,11 @@ https://api.opencagedata.com/geocode/v1/json?q=New York City&key=15ff9fe808984f1
 
 ```
  "bounds": {
-                "northeast": {
-                    "lat": -34.5776519,
-                    "lng": -58.4614548
-                },
+    "northeast": {
+        "lat": -34.5776519,
+        "lng": -58.4614548
+    },
+ }
 ``` 
 
 #### MVP 
@@ -62,10 +63,9 @@ Based on the initial logic defined in the previous sections try and breakdown th
 
 | Component | Description | 
 | --- | :---: |  
-| Header       | This will render the header include the nav | 
-| Nav          | This will render the Nav  |
-| Footer       | This will render the footer |
-| Trail        | This will render the Trail  |
+| Nav          | Renders search, TrailList, CityList |
+| Footer       | Displays project and team name, creation date. Located at bottom of page |
+| Trail        | Renders information about individual trail: coordinates + address, distance, location on map + trail view |
 | City         | This will render the city include the nav |
 | Create Trail | This will render the create Trail component |
 | Search       | This will render a search bar|
