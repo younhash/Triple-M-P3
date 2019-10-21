@@ -88,7 +88,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Working with backend api | H | 3 hrs| hrs | hrs |
 | Styling | M | 6 hrs| hrs | hrs |
 | testing routes and components| M | 4 hrs| hrs | hrs |
-| Total | H | 63 hrs| 5hrs | 5hrs |
+| Total | H | 63 hrs| hrs | hrs |
 
 
 ## Additional Libraries
