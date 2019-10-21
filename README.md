@@ -2,7 +2,7 @@
 # Triple-M-P3
 ![](https://files.slack.com/files-pri/T0351JZQ0-FPM0UN0SU/image.png)
       Mountain Biking
-![] (https://media0.giphy.com/media/5vAK2sRnNh6Fi/giphy-downsized.gif)
+![] (https://slack-imgs.com/?c=1&o1=ro&url=https%3A%2F%2Fmedia0.giphy.com%2Fmedia%2F5vAK2sRnNh6Fi%2Fgiphy-downsized.gif)
 ## Project Description
 
 This application will allow cyclist to find trails in their local or nearby city. It will give them 
