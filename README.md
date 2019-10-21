@@ -32,16 +32,14 @@ https://api.opencagedata.com/geocode/v1/json?q=New York City&key=15ff9fe808984f1
 - Edit Item
 - Delete Item
 - Render data on page 
-- Allow user to choose favorites
-- Save their choices in our database
 - Add map api to identify location
 
 #### PostMVP
 
 - Add current weather
 - add pins on map
-
- 
+- Allow user to choose favorites
+- Save their choices in our database
 
 ## ERD Diagram
 
@@ -63,13 +61,15 @@ Based on the initial logic defined in the previous sections try and breakdown th
 | Component | Description | 
 | --- | :---: |  
 | Header       | This will render the header include the nav | 
-| Nav          | This will render the Nav  |
-| Footer       | This will render the footer |
-| Trail        | This will render the Trail  |
-| City         | This will render the city include the nav |
+| Nav          | This will render a navigation bar|
+| Footer       | This will render the copyright year and creators info |
+| Trail        | This will render a specific Trail's info  |
+| TrailList    | This will render a list of Trail's info  |
+| City         | This will query all cities in DB|
+| CityList     | This will have a list of cities |
 | Create Trail | This will render the create Trail component |
-| Search       | This will render a search bar|
-| Map          | This will render a map  |
+| Search       | This will render a search form, which allows to search for a specific city|
+| Map          | This will render a map with trials around a city and A trail route |
 
 
 Time frames are also key in the development cycle.  You have limited time to code all phases of the game.  Your estimates can then be used to evalute game possibilities based on time needed and the actual time you have before game must be submitted. It's always best to pad the time by a few hours so that you account for the unknown so add and additional hour or two to each component to play it safe. Also, put a gif at the top of your Readme before you pitch, and you'll get a panda prize.
@@ -100,7 +100,7 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 
 ## Additional Libraries
- Use this section to list all supporting libraries and their role in the project. 
+ Axios, react-router-dom, react-router, OpenLayers 
 
 ## Code Snippet
 
