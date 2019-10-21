@@ -43,7 +43,7 @@ https://api.opencagedata.com/geocode/v1/json?q=New York City&key=15ff9fe808984f1
 
 ## ERD Diagram
 
-https://docdro.id/ZwV5qIM
+https://www.lucidchart.com/invitations/accept/be4e4749-e00d-4e1e-b2de-16ec11283efa
 
 ## React Component Hierarchy
 
