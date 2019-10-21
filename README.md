@@ -28,12 +28,12 @@ https://api.opencagedata.com/geocode/v1/json?q=New York City&key=15ff9fe808984f1
 ``` 
 
 #### MVP 
-- Create New Item
-- Read Item
-- Edit Item
-- Delete Item
-- Render data on page 
-- Add map api to identify location
+- Create  New trail and user
+- Read trail details
+- Update a trail description
+- Delete user and or trail descriptions
+- Render data on page
+- Add map api to identify a location with trails
 
 #### PostMVP
 
