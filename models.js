@@ -61,4 +61,4 @@ export class City extends Model{}
             sequelize
         }
     )
->>>>>>> origin/Marcos
+
