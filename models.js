@@ -5,6 +5,22 @@ const sequelize = new Sequelize({
     "dialect": "postgres"
 });
 
+// City model
+export class City extends Model{}
+City.init(
+    {
+        name: DataTypes.STRING,
+        state: DataTypes.STRING,
+        latitude: DataTypes.DOUBLE,
+        longitude: DataTypes.DOUBLE,
+    },
+    {
+        freezeTableName: true,
+        tableName: "Cities",
+        sequelize
+    }
+)
+
 // trail model
 export class Trail extends Model{}
 Trail.init(
@@ -21,7 +37,7 @@ Trail.init(
         difficulty: DataTypes.STRING,
         length: DataTypes.DOUBLE,
         latitude: DataTypes.DOUBLE,
-        longitude: DataTypes.DOUBLE,
+        longitude: DataTypes.DOUBLE
     },
     {
         freezeTableName: true,
@@ -30,21 +46,6 @@ Trail.init(
     },
 )
 
-// city model
-export class City extends Model{}
-City.init(
-    {
-        name: DataTypes.STRING,
-        state: DataTypes.STRING,
-        latitude: DataTypes.DOUBLE,
-        longitude: DataTypes.DOUBLE,
-    },
-    {
-        freezeTableName: true,
-        tableName: "Cities",
-        sequelize
-    }
-)
 
 // user model
 export class User extends Model{}
