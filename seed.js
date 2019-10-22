@@ -1,4 +1,4 @@
-import { Trail, City, User } from './models'
+import { Trail, State, User } from './models'
 
 const trails =[
     {
@@ -14,7 +14,8 @@ const trails =[
         "imgMedium": "https://cdn-files.apstatic.com/mtb/7002944_medium_1554403854.jpg",
         "length": 7.4,
         "longitude": -105.3422,
-        "latitude": 40.0155
+        "latitude": 40.0155,
+        "stateId": 3,
     },
     {
         "name": "Centennial Cone",
@@ -29,7 +30,8 @@ const trails =[
         "imgMedium": "https://cdn-files.apstatic.com/mtb/7029901_medium_1555016067.jpg",
         "length": 17.2,
         "longitude": -105.371,
-        "latitude": 39.7372
+        "latitude": 39.7372,
+        "stateId": 3,
     },
     {
         "name": "Betasso Preserve",
@@ -44,7 +46,8 @@ const trails =[
         "imgMedium": "https://cdn-files.apstatic.com/mtb/7002944_medium_1554403854.jpg",
         "length": 7.4,
         "longitude": -105.3422,
-        "latitude": 40.0155
+        "latitude": 40.0155,
+        "stateId": 3,
     },
     {
         "name": "Apex Park Tour",
@@ -59,7 +62,8 @@ const trails =[
         "imgMedium": "https://cdn-files.apstatic.com/mtb/7018020_medium_1554917670.jpg",
         "length": 9.4,
         "longitude": -105.2097,
-        "latitude": 39.7162
+        "latitude": 39.7162,
+        "stateId": 3,
     },
     {
         "name": "Hall Ranch",
@@ -74,7 +78,8 @@ const trails =[
         "imgMedium": "https://img.youtube.com/vi/hI1RUEer4ng/hqdefault.jpg",
         "length": 11.8,
         "longitude": -105.2884,
-        "latitude": 40.2106
+        "latitude": 40.2106,
+        "stateId": 3,
     },
     {
         "name": "North Table Loop",
@@ -89,7 +94,8 @@ const trails =[
         "imgMedium": "https://cdn-files.apstatic.com/mtb/7010776_medium_1554838463.jpg",
         "length": 7.5,
         "longitude": -105.2301,
-        "latitude": 39.7812
+        "latitude": 39.7812,
+        "stateId": 3,
     },
     { 
         "name": "Big Creek Park",
@@ -104,7 +110,8 @@ const trails =[
         "imgMedium": "https://img.youtube.com/vi/Cew7xyEGJgs/hqdefault.jpg",
         "length": 7.7,
         "longitude": -84.3122,
-        "latitude": 34.0244
+        "latitude": 34.0244,
+        "stateId": 2,
     },
     { 
         "name": "All-A-Toona Loop",
@@ -119,7 +126,8 @@ const trails =[
         "imgMedium": "https://img.youtube.com/vi/w2IRwUYqqRs/hqdefault.jpg",
         "length": 31.6,
         "longitude": -84.7181,
-        "latitude": 34.0209
+        "latitude": 34.0209,
+        "stateId": 2,
     },
     {  
         "name": "Dirty Sheets Gravel Loop",
@@ -134,7 +142,8 @@ const trails =[
         "imgMedium": "https://cdn-files.apstatic.com/mtb/7009007_medium_1554829898.jpg",
         "length": 20.7,
         "longitude": -84.7133,
-        "latitude": 33.5713
+        "latitude": 33.5713,
+        "stateId": 2,
     },
     { 
         "name": "Georgia International Horse Park",
@@ -149,7 +158,8 @@ const trails =[
         "imgMedium": "https://cdn-files.apstatic.com/mtb/7019803_medium_1554925728.jpg",
         "length": 8.9,
         "longitude": -83.9422,
-        "latitude": 33.6722
+        "latitude": 33.6722,
+        "stateId": 2,
     },
     {   
         "name": "Mt. Tabor Park",
@@ -164,7 +174,8 @@ const trails =[
         "imgMedium": "https://cdn-files.apstatic.com/mtb/7005553_medium_1554823711.jpg",
         "length": 4.7,
         "longitude": -84.7711,
-        "latitude": 33.9464
+        "latitude": 33.9464,
+        "stateId": 2,
     },
     {
         "name": "Cunningham Park",
@@ -179,7 +190,8 @@ const trails =[
         "imgMedium": "https://cdn-files.apstatic.com/mtb/342625_medium_1554220646.jpg",
         "length": 4.4,
         "longitude": -73.7652,
-        "latitude": 40.7422
+        "latitude": 40.7422,
+        "stateId": 1,
     },
     {
         "name": "Sprain Ridge Loop",
@@ -194,7 +206,8 @@ const trails =[
         "imgMedium": "https://cdn-files.apstatic.com/mtb/7027367_medium_1555010863.jpg",
         "length": 7.6,
         "longitude": -73.8492,
-        "latitude": 40.9855
+        "latitude": 40.9855,
+        "stateId": 1,
     },
     {    
         "name": "Frost Woods Park",
@@ -209,7 +222,8 @@ const trails =[
         "imgMedium": "",
         "length": 5.2,
         "longitude": -74.3893,
-        "latitude": 40.4086
+        "latitude": 40.4086,
+        "stateId": 1,
     },
     { 
         "name": "Many Log Run",
@@ -225,7 +239,8 @@ const trails =[
         "imgMedium": "",
         "length": 1.3,
         "longitude": -74.0414,
-        "latitude": 40.3876
+        "latitude": 40.3876,
+        "stateId": 1,
     },
     {
         "name": "Green Apple",
@@ -241,25 +256,26 @@ const trails =[
         "imgMedium": "https://cdn-files.apstatic.com/mtb/342625_medium_1554220646.jpg",
         "length": 1,
         "longitude": -73.7708,
-        "latitude": 40.74
+        "latitude": 40.74,
+        "stateId": 1,
     }
 ]
 
-const cities = [
- {
-	"name": "New York City",
+const states = [
+{
+	"city": "New York City",
 	"state": "New York",
 	"latitude": 40.730610,
 	"longitude": -73.935242
 },
 {
-	"name": "Atlanta",
+	"city": "Atlanta",
 	"state": "Georgia",
 	"latitude": 33.753746,
 	"longitude": -84.386330
 },
 {
-	"name": "Boulder",
+	"city": "Boulder",
 	"state": "Colorado",
 	"latitude": 40.014984,
 	"longitude": -105.270546
@@ -273,7 +289,7 @@ const users = [
     }
 ]
 const seedTables = () => {
-    cities.forEach(async city => await City.create(city))
+    states.forEach(async state => await State.create(state))
     trails.forEach(async trail => await Trail.create(trail))
     users.forEach(async user => await User.create(user))
 }
