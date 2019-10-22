@@ -16,10 +16,8 @@ export default function Trail({}){
     let trailInfo = trails[0]
     let {name, state, lat, lon} = trailInfo;
     console.log(trailInfo);
-    const getTrailPointsArr = async () => {
-        
-    }
-    
+    // const getTrailPointsArr = async () => {
+    // }
     return(
         <div className='trail'>
             <Map info={{trailInfo}} model={'trail'} />

@@ -60,3 +60,5 @@ User.init(
         sequelize
     }
 )
+City.hasMany(Trail, {onDelete: 'cascade'});
+Trail.belongsTo(City)
