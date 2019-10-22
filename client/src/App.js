@@ -12,7 +12,6 @@ import City from './components/city/City';
 
 // trail components
 import CreateTrail from './components/trail/CreateTrail';
-import EditTrail from './components/trail/EditTrail';
 import Trail from './components/trail/Trail';
 
 // user components
@@ -41,7 +40,7 @@ function App() {
           <Route exact path='/trails'><ModelItemsList model={'trail'} search={search} /></Route>
           <Route exact path='/trails/:id'><Trail /></Route>
           <Route exact path='/trails/new'><CreateTrail /></Route>
-          <Route exact path='/trails/edit'><EditTrail /></Route>
+          {/* <Route exact path='/trails/edit'><EditTrail /></Route> */}
           <Route exact path='/user'><User /></Route>
           <Route exact path='/user/new'><NewUser /></Route>
           <Route exact path='/user/edit'><EditUser /></Route>

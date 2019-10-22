@@ -1,5 +1,6 @@
 import React from 'react';
-export default function CityCard({trailObj}){
+import EditTrail from './components/trail/EditTrail';
+export default function TrailCard({trailObj}){
     console.log('trailobj',trailObj);
     
     let {name, city, state, latitude, longitude, imgSmall, id} = trailObj;

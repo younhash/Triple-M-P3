@@ -4,8 +4,11 @@ import React, {useState} from 'react';
 // axios
 import axios from 'axios';
 
-// components and seeds
+// components
 import Map from '../Map';
+import EditTrail from './components/trail/EditTrail';
+
+// seeds
 import {trails} from '../seedtrails';
 
 export default function Trail({}){
