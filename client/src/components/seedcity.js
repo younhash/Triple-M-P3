@@ -7,14 +7,14 @@ export let cities = [
         "lon": -73.935242
     },
     {
-        "id":1,
+        "id":2,
         "name": "Atlanta",
         "state": "Georgia",
         "lat": 33.753746,
         "lon": -84.386330
     },
     {
-        "id":1,
+        "id":3,
         "name": "Boulder",
         "state": "Colorado",
         "lat": 	40.014984,
