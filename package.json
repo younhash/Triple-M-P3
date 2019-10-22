@@ -1,5 +1,5 @@
 {
-  "name": "biking",
+  "name": "bikingtrails",
   "version": "1.0.0",
   "description": "front end app to bike trail application",
   "main": "index.js",
@@ -26,7 +26,7 @@
   },
   "keywords": [
     "moutain",
-    "biking"
+    "bikingtrails"
   ],
   "dependencies": {
     "cors": "^2.8.5",
