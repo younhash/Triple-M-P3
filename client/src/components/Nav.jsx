@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import Search from './Search';
 
 export default function Nav({searchChange, search}){
-    console.log(searchChange, search);
+    // console.log(searchChange, search);
     
     return(
         <div className='nav'>
