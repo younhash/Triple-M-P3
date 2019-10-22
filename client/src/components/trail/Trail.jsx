@@ -4,8 +4,11 @@ import React, {useState} from 'react';
 // axios
 import axios from 'axios';
 
-// components and seeds
+// components
 import Map from '../Map';
+import EditTrail from './EditTrail';
+
+// seeds
 import {trails} from '../seedtrails';
 
 export default function Trail({}){
@@ -13,10 +16,8 @@ export default function Trail({}){
     let trailInfo = trails[0]
     let {name, state, lat, lon} = trailInfo;
     console.log(trailInfo);
-    const getTrailPointsArr = async () => {
-        
-    }
-    
+    // const getTrailPointsArr = async () => {
+    // }
     return(
         <div className='trail'>
             <Map info={{trailInfo}} model={'trail'} />

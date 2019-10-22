@@ -20,7 +20,7 @@ export default function ModelItemsList({model, search}){
     
     // console.log(trails, model);
     
-    let modelItemsArr = model==='trail'? trails:cities;
+    let modelItemsArr = model==='trail' ? trails : cities;
 
     return(
         <div className={`${model}-list`} >
