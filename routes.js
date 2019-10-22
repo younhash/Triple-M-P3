@@ -29,3 +29,40 @@ const getAllCities = async (
     }
 }
 allCitiesRouter.get("/cities",getAllCities)
+export const cityRouter = Router()
+const getCityByID = async (
+    /**@type{express.Request}*/req,
+    /**@type{express.Response}*/res) => {
+    try{
+        const id = req.params.id
+        const city = await City.findOne({
+            where: {id: id}
+        })
+        return res.status(200).json({city}) 
+    }catch (error) {
+        return res.status(500).send(error.message)
+    }
+}
+cityRouter.get("/cities/:id", getCityByID)
+
+
+export const userRouter = Router()
+const addNewUser = (/** @type {express.Request} */req, /** @type {express.Response} */ res) => {
+    let {firstName, lastName, alias} = req.body
+    return User.create({firstName, lastName, alias}).then(user => {return res.status(200).json({created: user}) })
+    .catch(error => {return res.status(500).send(error.message)})
+}
+const getAllUsers = async (
+    /**@type{express.Request}*/req,
+    /**@type{express.Response}*/res) => {
+    try{
+        const users = await User.findAll({})
+        return res.status(200).json({users}) 
+    }catch (error) {
+        return res.status(500).send(error.message)
+    }
+}
+
+
+userRouter.get('/users', getAllUsers)
+userRouter.post("/users", addNewUser)
