@@ -1,25 +1,53 @@
-import React from 'react';
-// import {BrowserRouter} from 'react-router-dom';
-import './App.css';
+// react imports
+import React, {useState} from 'react';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
+// general components
+import ModelItemsList from './components/ModelList';
 import Nav from './components/Nav';
-import City from './components/city/City';
 import Map from './components/Map';
+
+// city components
+import City from './components/city/City';
+
+// trail components
 import CreateTrail from './components/trail/CreateTrail';
-import { typeAlias } from '@babel/types';
+import EditTrail from './components/trail/EditTrail';
+import Trail from './components/trail/Trail';
+
+// user components
+import EditUser from './components/user/EditUser';
+import User from './components/user/User';
+import NewUser from './components/user/NewUser';
+
+// styling
+import './App.css';
 
 
 function App() {
-  const returnSearch = (searchInfo) => {
-    
-  }
+  let [search, setSearch] = useState('');
+    const searchChange = (e) => {
+      let searchValue = e.target.value;
+      setSearch(searchValue)
+    }
   return (
-    // <BrowserRouter>
+    <BrowserRouter>
       <div className="App">
-        <img src='/crop-david-marcu-unsplash.jpg' alt='bike riding in the mountain' width="100%" height=""/>
-        <Nav  fxns={{returnSearch}}/>
+        <Nav  searchChange={searchChange} search={search}/>
+        <Switch>
+          <Route exact path='/'></Route>
+          <Route exact path='/cities'><ModelItemsList model={'city'} search={search} /></Route>
+          <Route exact path='/cities/:id'><City /></Route>
+          <Route exact path='/trails'><ModelItemsList model={'trail'} search={search} /></Route>
+          <Route exact path='/trails/:id'><Trail /></Route>
+          <Route exact path='/trails/new'><CreateTrail /></Route>
+          <Route exact path='/trails/edit'><EditTrail /></Route>
+          <Route exact path='/user'><User /></Route>
+          <Route exact path='/user/new'><NewUser /></Route>
+          <Route exact path='/user/edit'><EditUser /></Route>
+        </Switch>
       </div>
-    // </BrowserRouter>
+    </BrowserRouter>
   );
 }
 
