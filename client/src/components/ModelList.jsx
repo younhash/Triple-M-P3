@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React /*, {useState, useEffect}*/ from 'react';
 // import axios from 'axios';
 import CityCard from './city/CityCard';
 import TrailCard from './trail/TrailCard';
@@ -34,9 +34,12 @@ export default function ModelItemsList({model, search}){
             "lon": -105.270546
         },
     ]
+    console.log(cities);
+    
     let modelItemsArr = cities;
     return(
         <div className={`${model}-list`} >
+            {model}
             {modelItemsArr.map((modelItem, idx) => {
                 let regex = new RegExp(`^${search}`, 'i')
                 if (model === 'trail'){
