@@ -3,6 +3,7 @@ import React /*, {useState, useEffect}*/ from 'react';
 import CityCard from './city/CityCard';
 import TrailCard from './trail/TrailCard';
 import {trails} from './seedtrails';
+import {cities} from './seedcity';
 export default function ModelItemsList({model, search}){
     // const [modelItemsArr, setModelItemsArr] = useState([]);
     // const buildModelItemsArr = async () => {
@@ -19,7 +20,8 @@ export default function ModelItemsList({model, search}){
     
     // console.log(trails, model);
     
-    let modelItemsArr = trails;
+    let modelItemsArr = model==='trail'? trails:cities;
+
     return(
         <div className={`${model}-list`} >
             {model}
@@ -33,7 +35,7 @@ export default function ModelItemsList({model, search}){
                 } else if (model === 'city') {
                     if (!!modelItem.name.match(regex) || !!modelItem.state.match(regex)){
                         let city = modelItem;
-                        return <CityCard cityObj={{city, model}} key={`${model}-${idx}`} />
+                        return <CityCard city={city} key={`${model}-${idx}`} />
                     }
                 }
             })}

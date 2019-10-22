@@ -271,6 +271,7 @@ export const trails = [
         "city":"Bellerose Terrace",
         "state":"New York",
         "url": "https://www.mtbproject.com/trail/340491/cunningham-park",
+        "imgSmall": "https://cdn-files.apstatic.com/mtb/342625_small_1554220646.jpg",
         "imgMedium": "https://cdn-files.apstatic.com/mtb/342625_medium_1554220646.jpg",
         "length": 4.4,
         "ascent": 202,
