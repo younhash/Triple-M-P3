@@ -14,7 +14,6 @@ const getAllCities = async (
     }
 }
 
-
 const getCityByID = async (
     /**@type{express.Request}*/req,
     /**@type{express.Response}*/res) => {
@@ -49,14 +48,18 @@ const getAllUsers = async (
         return res.status(500).send(error.message)
     }
 }
+
 const deleteUser = (/**@type{express.Request}*/req, /**@type{express.Response}*/res) => {
-return User.destroy({where: {id: req.params.id}}).then(user => {return res.status(200).json({deleted: user}) })
-.catch(error => {return res.status(500).send(errror.message)})
+    return User.destroy({where: {id: req.params.id}}).then(user => {return res.status(200).json({deleted: user}) })
+    .catch(error => {return res.status(500).send(errror.message)})
 }
+
 export const userRouter = Router()
 userRouter.get('/users', getAllUsers)
 userRouter.post("/users", addNewUser)
 userRouter.delete("/users", deleteUser)
+
+
 const getAllTrails = async (
     /** @type{express.Request}*/ req,
     /** @type{express.Response}*/ res
@@ -70,10 +73,10 @@ const getAllTrails = async (
             return res.status(500).send(error.message)
         }
     }
+
 const getTrailByID = async (
     /**@type{express.Request}*/req,
-    /**@type{express.Response}*/res) => {
-        
+    /**@type{express.Response}*/res) => {   
     try{
         const id = req.params.id
         const trails = await Trail.findOne({
@@ -84,14 +87,32 @@ const getTrailByID = async (
         return res.status(500).send(error.message)
     }
 }
+// const getTrailsByCity = async (
+//     /**@type{express.Request}*/req,
+//     /**@type{express.Response}*/res) => {   
+//     try{
+//         const city = req.params
+//         const trails = await Trail.findAll({
+//             include:[ {city: city}]
+//         })
+        
+//         if(trails){
+//         return res.status(200).json({trails}) 
+//     }
+//         return res.status(404).send('The city you selected is still finding it\'s trails')   
+//     }catch (error) {
+//         return res.status(500).send(error.message)
+//     }
+// }
 const updateTrail = (/** @type {express.Request} */ req, /** @type {express.Response} */ res)=>{
     return Trail.update(req.body, {where: {id: req.params.id}}).then(trail => {
         return res.status(200).json({updated: trail})
     }).catch(error => { return res.status(500).send(error.message)})
 }
+
 export const allTrailsRouter = Router()
 allTrailsRouter.get("/trails", getAllTrails)
 allTrailsRouter.get("/trails/:id", getTrailByID)
 allTrailsRouter.put("/trails/:id/edit", updateTrail)
-
+allTrailsRouter.get("/trails/:city", getTrailsByCity)
 
