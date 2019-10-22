@@ -8,13 +8,11 @@ import Map from './components/Map';
 import CreateTrail from './components/trail/CreateTrail';
 
 function App() {
-  const returnSearch = (searchInfo) => {
-    
-  }
+  
   return (
     // <BrowserRouter>
       <div className="App">
-        <Nav  fxns={{returnSearch}}/>
+        <Nav />
       </div>
     // </BrowserRouter>
   );
