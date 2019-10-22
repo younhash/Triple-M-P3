@@ -13,8 +13,6 @@ const getAllCities = async (
         return res.status(500).send(error.message)
     }
 }
-export const allCitiesRouter = Router()
-allCitiesRouter.get("/cities",getAllCities)
 
 
 const getCityByID = async (
@@ -30,6 +28,8 @@ const getCityByID = async (
         return res.status(500).send(error.message)
     }
 }
+export const allCitiesRouter = Router()
+allCitiesRouter.get("/cities", getAllCities)
 allCitiesRouter.get("/cities/:id", getCityByID)
 
 
@@ -38,7 +38,6 @@ const addNewUser = (/** @type {express.Request} */req, /** @type {express.Respon
     return User.create({firstName, lastName, alias}).then(user => {return res.status(200).json({created: user}) })
     .catch(error => {return res.status(500).send(error.message)})
 }
-
 
 const getAllUsers = async (
     /**@type{express.Request}*/req,
@@ -50,10 +49,14 @@ const getAllUsers = async (
         return res.status(500).send(error.message)
     }
 }
+const deleteUser = (/**@type{express.Request}*/req, /**@type{express.Response}*/res) => {
+return User.destroy({where: {id: req.params.id}}).then(user => {return res.status(200).json({deleted: user}) })
+.catch(error => {return res.status(500).send(errror.message)})
+}
 export const userRouter = Router()
 userRouter.get('/users', getAllUsers)
 userRouter.post("/users", addNewUser)
-
+userRouter.delete("/users", deleteUser)
 const getAllTrails = async (
     /** @type{express.Request}*/ req,
     /** @type{express.Response}*/ res
