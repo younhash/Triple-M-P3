@@ -46,36 +46,6 @@ City.init(
     }
 )
 
-<<<<<<< HEAD
-    City.init(
-        {
-            name: DataTypes.STRING,
-            latitude: DataTypes.INTEGER,
-            longitude: DataTypes.INTEGER,
-            state: DataTypes.STRING
-        },
-        {
-            freezeTableName: true,
-            tableName: "Cities",
-            sequelize
-        }
-    )
-
-    export class User extends Model{}
-
-    User.init(
-        {
-            firstName: DataTypes.STRING,
-            lastName: DataTypes.STRING,
-            alias: DataTypes.STRING,
-        },
-        {
-            freezeTableName: true,
-            tableName: "Users",
-            sequelize
-        }
-    )
-=======
 // user model
 export class User extends Model{}
 User.init(
@@ -90,4 +60,3 @@ User.init(
         sequelize
     }
 )
->>>>>>> Marcos
