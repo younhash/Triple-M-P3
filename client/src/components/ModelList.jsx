@@ -24,7 +24,7 @@ export default function ModelItemsList({model, search}){
 
     return(
         <div className={`${model}-list`} >
-            <img src='../../public/crop-david-marcu-unsplash.jpg' alt='bike riding in the mountain' width="100%" height=""/>
+            <img src='/crop-david-marcu-unsplash.jpg' alt='bike riding in the mountain' width="100%" height=""/>
             {model}
             {modelItemsArr.map((modelItem, idx) => {
                 let regex = new RegExp(`^${search}`, 'i')
