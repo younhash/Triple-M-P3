@@ -261,7 +261,7 @@ const cities = [
 {
 	"name": "Boulder",
 	"state": "Colorado",
-	"latitude": 	40.014984,
+	"latitude": 40.014984,
 	"longitude": -105.270546
 }
 ]

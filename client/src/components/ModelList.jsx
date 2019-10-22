@@ -20,11 +20,10 @@ export default function ModelItemsList({model, search}){
     
     // console.log(trails, model);
     
-    let modelItemsArr = model==='trail'? trails:cities;
+    let modelItemsArr = model==='trail' ? trails : cities;
 
     return(
         <div className={`${model}-list`} >
-            <img src='/crop-david-marcu-unsplash.jpg' alt='bike riding in the mountain' width="100%" height=""/>
             {model}
             {modelItemsArr.map((modelItem, idx) => {
                 let regex = new RegExp(`^${search}`, 'i')

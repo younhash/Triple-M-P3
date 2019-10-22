@@ -16,10 +16,32 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-
-.App-link {
-  color: #09d3ac;
+a {
+  all:unset;
 }
+
+.nav {
+  position: relative;
+  width: 100%;
+  /* display: flex; */
+  /* flex-flow: column; */
+}
+  .nav img{
+  }
+  .links {
+    /* justify-content: center; */
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    margin: 20px auto;
+    top: 0;
+  }
+  .search{
+    position: absolute;
+    bottom: 0;
+    margin: 20px auto;
+    width: 100%;
+  }
 
 button {
   height: 45px;

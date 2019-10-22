@@ -6,7 +6,7 @@ import axios from 'axios';
 
 // components
 import Map from '../Map';
-import EditTrail from './components/trail/EditTrail';
+import EditTrail from './EditTrail';
 
 // seeds
 import {trails} from '../seedtrails';
