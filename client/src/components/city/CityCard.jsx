@@ -7,7 +7,7 @@ export default function CityCard({city}){
             <div className='city-state'>{state}</div>
             <div className='city-lat'>{lat}</div>
             <div className='city-lon'>{lon}</div>
-            <a className='city-img-url' href={`${id}`} ><img className='city-img' url={imgSmall} /></a>
+            <a className='city-img-url' href={`${id}`} ><img className='city-img' src={imgSmall} /></a>
         </div>
     )
 }
