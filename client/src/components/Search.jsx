@@ -1,15 +1,9 @@
 import React, {useState} from 'react';
-export default function Search({fxns}){
-    const {returnSearch} = fxns;
-    let [search, setSearch] = useState('');
-    const searchSubmit = (e) => {
-        e.preventDefault()
-        returnSearch(search)
-    }
-    const searchChange = (e) => {
-        let searchValue = e.target.value;
-        setSearch(searchValue)
-    }
+export default function Search({fxns, search}){
+    const {searchChange} = fxns;
+    
+    const searchSubmit = (e) => {e.preventDefault()}
+    
 
     // search query functions
     /*
