@@ -1,0 +1,54 @@
+{
+  "name": "bikingtrails",
+  "version": "1.0.0",
+  "description": "front end app to bike trail application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run server",
+    "babel-server": "babel-node ./server.js",
+    "server": "babel-watch ./server.js",
+    "resetdb": "babel-node ./resetDb.js",
+    "seed": "babel-node ./seed.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.generalassemb.ly/maluccio/Triple-M-P3.git"
+  },
+  "author": "Matt Lucciola, Marcos Dominguez, Mohammad Jaiteh",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/node": "^7.6.3",
+    "@babel/preset-env": "^7.6.3",
+    "add": "^2.0.6",
+    "babel-watch": "^7.0.0"
+  },
+  "keywords": [
+    "moutain",
+    "bikingtrails"
+  ],
+  "dependencies": {
+    "axios": "^0.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.19.4",
+    "pg": "^7.12.1",
+    "react-router-dom": "^5.1.2",
+    "sequelize": "^5.21.1",
+    "sequelize-cli": "^5.5.1"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  }
+}
