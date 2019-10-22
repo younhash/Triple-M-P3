@@ -1,35 +1,38 @@
 import express from 'express'
 import { Router } from 'express'
-import {Trail, City, User} from './models'
+import {Trail, State, User} from './models'
 
- 
-const getAllCities = async (
+// get all states in single query
+const getAllStates = async (
     /**@type{express.Request}*/req,
     /**@type{express.Response}*/res) => {
     try{
-        const cities = await City.findAll({})
-        return res.status(200).json({cities}) 
+        const states = await State.findAll({})
+        return res.status(200).json({states})
     }catch (error) {
         return res.status(500).send(error.message)
     }
 }
+export const allStatesRouter = Router()
+allStatesRouter.get("/states", getAllStates)
 
-const getCityByID = async (
+// get single state info with all trails
+const getStateByID = async (
     /**@type{express.Request}*/req,
     /**@type{express.Response}*/res) => {
     try{
         const id = req.params.id
-        const city = await City.findOne({
+        const state = await State.findOne({
             where: {id: id}
         })
-        return res.status(200).json({city}) 
+        return res.status(200).json({state}) 
     }catch (error) {
         return res.status(500).send(error.message)
     }
 }
-export const allCitiesRouter = Router()
-allCitiesRouter.get("/cities", getAllCities)
-allCitiesRouter.get("/cities/:id", getCityByID)
+
+allStatesRouter.get("/states/:id", getStateByID)
+
 
 
 const addNewUser = (/** @type {express.Request} */req, /** @type {express.Response} */ res) => {
@@ -114,5 +117,5 @@ export const allTrailsRouter = Router()
 allTrailsRouter.get("/trails", getAllTrails)
 allTrailsRouter.get("/trails/:id", getTrailByID)
 allTrailsRouter.put("/trails/:id/edit", updateTrail)
-allTrailsRouter.get("/trails/:city", getTrailsByCity)
+// allTrailsRouter.get("/trails/:city", getTrailsByCity)
 

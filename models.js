@@ -1,12 +1,13 @@
 import { Model, DataTypes, Sequelize } from 'sequelize'
 
-const sequelize = new Sequelize({
-    "database": "bikingtrails_db",
-    "dialect": "postgres"
-});
+const sequelize = new Sequelize(
+    {   database: "bikingtrails_db",
+        dialect: "postgres",
+    }
+)
 
 // trail model
-export class Trail extends Model{}
+export class Trail extends Model {};
 Trail.init(
     {
         name: DataTypes.STRING,
@@ -14,7 +15,7 @@ Trail.init(
         imgSqSmall: DataTypes.STRING,
         imgSmall: DataTypes.STRING,
         imgSmallMed: DataTypes.STRING,
-        imgMedium:DataTypes.STRING,
+        imgMedium: DataTypes.STRING,
         city: DataTypes.STRING,
         state: DataTypes.STRING,
         url: DataTypes.STRING,
@@ -22,26 +23,32 @@ Trail.init(
         length: DataTypes.DOUBLE,
         latitude: DataTypes.DOUBLE,
         longitude: DataTypes.DOUBLE,
+        stateId: {
+            type: Sequelize.INTEGER,
+            references: {
+                model: 'States', // 'persons' refers to table name
+                key: 'id', // 'id' refers to column name in persons table
+            }
+        }
     },
     {
         freezeTableName: true,
-        tableName: "Trails",
-        sequelize
+        tableName:"Trails",
+        sequelize,
     },
 )
 
-// city model
-export class City extends Model{}
-City.init(
+export class State extends Model{}
+State.init(
     {
-        name: DataTypes.STRING,
+        city: DataTypes.STRING,
         state: DataTypes.STRING,
         latitude: DataTypes.DOUBLE,
         longitude: DataTypes.DOUBLE,
     },
     {
         freezeTableName: true,
-        tableName: "Cities",
+        tableName: "States",
         sequelize
     }
 )
@@ -60,5 +67,5 @@ User.init(
         sequelize
     }
 )
-City.hasMany(Trail, {onDelete: 'cascade'});
-Trail.belongsTo(City)
+State.hasMany(Trail, {onDelete: 'CASCADE'});
+Trail.belongsTo(State)
