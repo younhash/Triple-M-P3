@@ -37,8 +37,8 @@ export class City extends Model{}
         {
             name: DataTypes.STRING,
             state: DataTypes.STRING,
-            latitude: DataTypes.INTEGER,
-            longitude: DataTypes.INTEGER
+            latitude: DataTypes.FLOAT,
+            longitude: DataTypes.FLOAT
         },
         {
             freezeTableName: true,

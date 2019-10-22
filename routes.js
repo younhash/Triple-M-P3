@@ -28,4 +28,4 @@ const getAllCities = async (
         return res.status(500).send(error.message)
     }
 }
-AllCitiesRouter.get("/cities",getAllCities)
+allCitiesRouter.get("/cities",getAllCities)
