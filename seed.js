@@ -1,6 +1,6 @@
 import { Trail, City, User } from './models'
 
-const trails = [
+const trails =[
     {
         "name": "Betasso Preserve",
         "summary": "A solid ride close to Boulder that is often ridden from town.",
@@ -242,7 +242,7 @@ const trails = [
         "length": 1,
         "longitude": -73.7708,
         "latitude": 40.74
-    },
+    }
 ]
 
 const cities = [
