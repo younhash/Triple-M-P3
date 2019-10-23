@@ -15,10 +15,10 @@ export default function EditUser({userObj, setUserObj}){
             setUserObj(newUserObj)
         } catch (err) {console.log(err)}
     }
-    const blurHandler = async (e) => {setUserObj({...userObj})}
-    let firstNameElem = <input className='input-update-user-description' type='text' onChange={editDescription} value={updatedUserDesc} onBlur={blurHandler} autoFocus />
-    let lastNameElem = <input className='input-update-user-description' type='text' onChange={editDescription} value={updatedUserDesc} onBlur={blurHandler} autoFocus />
-    let aliasElem = <input className='input-update-user-description' type='text' onChange={editDescription} value={updatedUserDesc} onBlur={blurHandler} autoFocus />
+    
+    let firstNameElem = <input className='input-update-user-description' type='text' onChange={editDescription} value={updatedUserDesc}  />
+    let lastNameElem = <input className='input-update-user-description' type='text' onChange={editDescription} value={updatedUserDesc}  />
+    let aliasElem = <input className='input-update-user-description' type='text' onChange={editDescription} value={updatedUserDesc}  />
 
     return(
         <div className='user-edit'>
