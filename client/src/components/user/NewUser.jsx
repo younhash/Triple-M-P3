@@ -13,6 +13,9 @@ export default function NewUser(){
         try {
             let res = await axios.post(query, userObj);
             console.log(res);
+
+            // go to home after submit
+            document.location = '/'
         } catch (err) {console.log(err)}
     }
 
