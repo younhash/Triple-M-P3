@@ -167,6 +167,51 @@ div.trail {
   flex-grow: 2;
 }
 
+form {
+  /* margin: 40px, 20px, 20px, 40px; */
+  margin: 0, auto;
+}
+
+.user-new {
+  width: 40%;
+  padding: 14px;
+  background-color: white;
+  float: center;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  font-size: 20px;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+
+/* Set a style for the submit button */
+.submit-user {
+  background-color: rgb(222, 222, 222);
+  color: white;
+  padding: 8px 12px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 50%;
+  float: center;
+  opacity: 0.9;
+}
+
+.submit-user:hover {
+  opacity: 1;
+}
+
 
 @media screen and (max-width: 600px) {
 }
