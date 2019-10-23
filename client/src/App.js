@@ -8,7 +8,7 @@ import Nav from './components/Nav';
 // import Map from './components/Map';
 
 // state components
-import State from './components/State/State';
+import State from './components/state/State'
 
 // trail components
 import CreateTrail from './components/trail/CreateTrail';

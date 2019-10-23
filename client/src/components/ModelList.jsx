@@ -1,5 +1,5 @@
-import React /*, {useState, useEffect}*/ from 'react';
-// import axios from 'axios';
+import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import StateCard from './state/StateCard';
 import TrailCard from './trail/TrailCard';
 export default function ModelItemsList({model, search}){
@@ -34,7 +34,7 @@ export default function ModelItemsList({model, search}){
                 } else if (model === 'state') {
                     if (!!modelItem.name.match(regex) || !!modelItem.state.match(regex)){
                         let state = modelItem;
-                        return <StateCard state={state} key={`${model}-${idx}`} />
+                        return <StateCard stateObj={state} key={`${model}-${idx}`} />
                     }
                 }
             })}

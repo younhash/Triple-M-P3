@@ -19,7 +19,7 @@ export default function State({}){
     return(
         <div className='state'>
             <Map info={{stateInfo}} model={'state'} />
-            <div className='state-city'>{name}</div>
+            <div className='state-city'>{city}</div>
             <div className='state-state'>{state}</div>
             <div className='state-lat'>{lat}</div>
             <div className='state-lon'>{lon}</div>
