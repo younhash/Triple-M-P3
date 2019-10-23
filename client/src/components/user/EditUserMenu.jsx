@@ -24,7 +24,7 @@ export default function EditUserMenu(){
         <div className='edit-user-menu'>
             {usersArr.map((user, idx) => {
                 console.log(user, usersArr.length);
-                return  <Link to={`/user/${user.id}/edit`}><UserCard userObj={user} key={idx} /></Link>
+                return  <Link to={`/user/${user.id}/edit`}><UserCard userObj={user} key={`ucrd-${idx}`} /></Link>
                 
             })}
         </div>
