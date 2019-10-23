@@ -5,8 +5,7 @@ export default function StateCard({stateObj}){
     
     return(
         <div className='state'>
-            <a className='state-url' href={`/states/${id}`} >{city}</a>
-            <div className='state-state'>{state}</div>
+            <a className='state-url' href={`/states/${id}`} >{state}</a>
             <div className='state-lat'>{lat}</div>
             <div className='state-lon'>{lon}</div>
         </div>
