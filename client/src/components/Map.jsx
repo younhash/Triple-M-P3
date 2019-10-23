@@ -56,7 +56,7 @@ export default function Map(){
                     latitude={viewport.latitude}
                     longitude={viewport.longitude}
                     zoom={viewport.zoom}
-                    mapboxApiAccessToken='pk.eyJ1IjoiYmFydGNvbnNlZGluZSIsImEiOiJjazBudWVxajUwMXdlM2hwZzFzcDQ5cWR5In0.376OjUpSFMy-y-PVfAeO9A'
+                    mapboxApiAccessToken='pk.eyJ1IjoibHVuYXRpYzI0MjAiLCJhIjoiY2syM21ndDh1MGdnejNjcGh5bW81dXdjdSJ9.ewN7SVmckWbKz3dcY_mu8g'
                     
                     onViewportChange={_onViewportChange}
                 >
