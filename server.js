@@ -11,7 +11,7 @@ app.use(cors())
 app.get('/test', (req,res) =>{
     return res.header(200).send({greetings: "Let's go for a nice ride on our bikes"})
 })
-app.use("/", [allTrailsRouter, allStatesRouter, userRouter])
+app.use("/api", [allTrailsRouter, allStatesRouter, userRouter])
 
 const PORT = 51011
 

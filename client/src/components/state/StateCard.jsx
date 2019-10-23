@@ -2,6 +2,8 @@ import React from 'react';
 
 export default function StateCard({stateObj}){
     let {city, state, lat, lon, imgSmall, id} = stateObj;
+    console.log(stateObj);
+    
     return(
         <div className='state'>
             <a className='state-url' href={`/states/${id}`} >{city}</a>

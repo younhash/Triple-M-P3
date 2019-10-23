@@ -5,19 +5,23 @@ import TrailCard from './trail/TrailCard';
 export default function ModelItemsList({model, search}){
     const [modelItemsArr, setModelItemsArr] = useState([]);
     const buildModelItemsArr = async () => {
-        let query = `/api/${model}s/`
+        let query = `/api/${model}s/`;
         try {
             let response = await axios.get(query);
-            setModelItemsArr([...response.data]);
+            // console.log('asdf' ,);
+            
+            // console.log('query',{...response.data.states});
+            setModelItemsArr([...response.data.states]);
         }
         catch (error) {console.log('ERROR', error)}
+        
     }
     useEffect(() => {
         buildModelItemsArr();
     },[model])
     
     // console.log(trails, model);
-    console.log(model, modelItemsArr);
+    // console.log(model, modelItemsArr);
     
     // let modelItemsArr = model==='trail' ? trails : cities;
 
@@ -32,7 +36,7 @@ export default function ModelItemsList({model, search}){
                         return <TrailCard trailObj={trail} key={`${model}-${idx}`} />
                     }
                 } else if (model === 'state') {
-                    if (!!modelItem.name.match(regex) || !!modelItem.state.match(regex)){
+                    if (!!modelItem.city.match(regex) || !!modelItem.state.match(regex)){
                         let state = modelItem;
                         return <StateCard stateObj={state} key={`${model}-${idx}`} />
                     }
