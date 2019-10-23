@@ -4,16 +4,16 @@ import StateCard from './state/StateCard';
 import TrailCard from './trail/TrailCard';
 export default function ModelItemsList({model, search}){
     const [modelItemsArr, setModelItemsArr] = useState([]);
-    const buildModelItemsArr = async () => {
-        let query = `/api/${model}s/`;
-        try {
-            let response = await axios.get(query);
-            setModelItemsArr([...response.data[`${model}s`]]);
-        }
-        catch (error) {console.log('ERROR', error)}
-    }
-
+    
     useEffect(() => {
+        const buildModelItemsArr = async () => {
+            let query = `/api/${model}s/`;
+            try {
+                let response = await axios.get(query);
+                setModelItemsArr([...response.data[`${model}s`]]);
+            }
+            catch (error) {console.log('ERROR', error)}
+        }
         buildModelItemsArr();
     },[model])
 
@@ -33,6 +33,7 @@ export default function ModelItemsList({model, search}){
                         return <StateCard stateObj={state} key={`${model}-${idx}`} />
                     }
                 }
+                return ''
             })}
         </div>
     )

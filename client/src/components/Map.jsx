@@ -1,7 +1,7 @@
 import React from 'react';
 export default function Map({info, model}){
-    console.log('model',model);
-    console.log('ze info',info);
+    // console.log('model',model);
+    // console.log('ze info',info);
     
     // let {lat, lon} = cityInfo
     return(
