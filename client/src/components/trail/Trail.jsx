@@ -13,6 +13,8 @@ export default function Trail({props}){
     let id = props.match.params.id;
     // let [trailPointsArr, setTrailPointsArr] = useState([]);
     let [trailObj, setTrailObj] = useState({});
+    let [newTrailObj, setNewTrailObj] = useState(trailObj)
+    let [editTrailOpen, setEditTrailOpen] = useState(false)
 
     let {name, city, state} = trailObj;
     let {latitude, longitude, length} = trailObj;
@@ -31,6 +33,10 @@ export default function Trail({props}){
         getTrailInfo()
     }, [id]) // now this
     // }, []) // orig this
+    
+    useEffect(() => {
+        if (editTrailOpen) {setEditTrailOpen(false);}
+    }, [trailObj])
 
     return(
         <div className='trail'>
@@ -44,8 +50,9 @@ export default function Trail({props}){
                 <div className="trail-difficulty">{difficulty}</div>
                 <div className="trail-summary">{summary}</div>
             </div>
-            <div className="edit-toggle">
-                x
+            <div className="edit-toggle-container">
+                <div className="edit-toggle" onClick={() => {setEditTrailOpen(!editTrailOpen)}} >x</div>
+                {(editTrailOpen) && <EditTrail trailObj={trailObj} setTrailObj={setTrailObj} />}
             </div>
             {/* <EditTrail trailObj={{trailObj}} /> */}
 
