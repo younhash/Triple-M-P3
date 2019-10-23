@@ -86,21 +86,21 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Adding state  | H | 5 hrs| 2.5hrs | 4hrs |
 | Adding Map design  | M | 4 hrs| hrs | hrs |
 | Adding Map API| M | 4 hrs| hrs | hrs |
-| Adding Nav| M | 2 hrs| 1hrs | hrs |
+| Adding Nav| M | 2 hrs| 1hrs | 1hrs |
 | Adding Geolocation| M | 3 hrs| hrs | hrs |
-| Adding Create Trail| M | 2 hrs| hrs | hrs |
-| Building DataBase | H | 2 hrs| hrs | hrs |
+| Adding Create Trail| M | 2 hrs| 2hrs | 2hrs |
+| Building DataBase | H | 2 hrs| 3hrs | 3hrs |
 | Building Trails Tables| H | 4 hrs| hrs | hrs |
 | Building state Table| H | 4 hrs| 4hrs | 4hrs |
 | Building Trails routes| H | 4 hrs|4 hrs | hrs |
 | Building state Routes | H | 4 hrs| 4hrs | 4hrs |
-| Seeding tables| M | 3 hrs| hrs | hrs |
+| Seeding tables| M | 3 hrs| 1hrs | 1hrs |
 | Database Migration | M | 2 hrs| 1hrs | 1 hrs |
 | Debugging| M | 4 hrs| hrs | hrs |
 | Project Approval | M | 1 hrs| hrs | hrs |
 | Working with backend api | H | 3 hrs| hrs | hrs |
-| Styling | M | 6 hrs| hrs | hrs |
-| testing routes and components| M | 4 hrs| hrs | hrs |
+| Styling | M | 6 hrs| 6 hrs | 6 hrs |
+| testing routes and components| M | 4 hrs| 4 hrs | 4 hrs |
 | Total | H | 63 hrs| hrs | hrs |
 
 
