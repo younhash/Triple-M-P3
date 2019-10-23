@@ -12,7 +12,7 @@ export default function EditTrail({trailObj, setTrailObj}){
         let newTrailObj = {...trailObj, 'summary': updatedTrailDesc}
         try {
             await axios.put(query, newTrailObj);
-            setTrailObj(newTrailObj)
+            setTrailObj({...newTrailObj})
         } catch (err) {console.log(err)}
     }
     const blurHandler = async () => {setTrailObj({...trailObj})}

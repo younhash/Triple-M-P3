@@ -5,46 +5,34 @@ export default function EditUser({props}){
     let [userObj, setUserObj] = useState({}) 
     let id = props.match.params.id
     const getUserInfo = async () => {
-        let query = `/users/${id}`
+        let query = `/api/users/${id}`
         try {
             let response = await axios(query)
             setUserObj({...response.data})
         }catch (error) {console.log(error, "you screwed up")}
     }
-    useEffect(()=>{
-        getUserInfo()
-    },[])
-    let [updatedUserFirstName, setUpdatedUserFirstName] = useState(userObj['firstName']);
-    let [updatedUserLastName, setUpdatedUserLastName] = useState(userObj['lastName']);
-    let [updatedUserAlias, setUpdatedUserAlias] = useState(userObj['alias']);
 
-    const editFirstName = (e) => {setUpdatedUserFirstName(e.target.value)}
-    const editLastName = (e) => {setUpdatedUserLastName(e.target.value)}
-    const editAlias = (e) => {setUpdatedUserAlias(e.target.value)}
+    useEffect(() => {getUserInfo()},[])
+
     const submitHandler = async (e) => {
         e.preventDefault();
         // make the call
         let query = `/api/users/${id}/edit`
-        let newUserFirstNameObj = {...userObj, 'firstName': updatedUserFirstName}
-        let newUserLastNameObj = {...userObj, 'lastName': updatedUserLastName}
-        let newUserAliasObj = {...userObj, 'lastName': updatedUserAlias}
+        let newUserObj = {...userObj}
         try {
-            await axios.put(query, newUserFirstNameObj);
-            // setUserObj(newUserObj)
+            let resp = await axios.put(query, {...newUserObj});
+            document.location = '/user/edit';
         } catch (err) {console.log(err)}
     }
-
-    let firstNameElem = <input className='input-update-user-description' type='text' onChange={editFirstName} value={updatedUserFirstName}  />
-    let lastNameElem = <input className='input-update-user-description' type='text' onChange={editLastName} value={updatedUserLastName}  />
-    let aliasElem = <input className='input-update-user-description' type='text' onChange={editAlias} value={updatedUserAlias}  />
 
     return(
         <div className='user-edit'>
             <div className='user-edit-card' >
                 <form onSubmit={submitHandler} >
-                    {firstNameElem}
-                    {lastNameElem}
-                    {aliasElem}
+                    <input className='input-update-user-firstname' type='text' onChange={(e) => {setUserObj({...userObj, firstName:e.target.value})}} value={userObj.firstName}  />
+                    <input className='input-update-user-lastname' type='text' onChange={(e) => {setUserObj({...userObj, lastName:e.target.value})}} value={userObj.lastName}  />
+                    <input className='input-update-user-alias' type='text' onChange={(e) => {setUserObj({...userObj, alias:e.target.value})}} value={userObj.alias}  />
+                    <button type='submit'>Submit</button>
                 </form>
             </div>
         </div>

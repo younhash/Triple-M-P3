@@ -19,6 +19,7 @@ import EditTrail from './components/trail/EditTrail';
 import NewUser from './components/user/NewUser';
 import User from './components/user/User';
 import EditUser from './components/user/EditUser';
+import EditUserMenu from './components/user/EditUserMenu';
 
 // styling
 import './App.css';
@@ -35,7 +36,7 @@ function App() {
   return (
     
     <BrowserRouter>
-    <Doc/>
+      {document.title = 'BikeStar'}
       <div className="App">
         <Nav  searchChange={searchChange} search={search}/>
         <Switch>
@@ -49,6 +50,7 @@ function App() {
           <Route exact path='/trails/:id/edit'><EditTrail /></Route>
           <Route exact path='/user'><User /></Route>
           <Route exact path='/user/new'><NewUser /></Route>
+          <Route exact path='/user/edit'><EditUserMenu /></Route>
           <Route exact path='/user/:id/edit'render={(props) => <EditUser props={props} />} />
         </Switch>
       </div>
