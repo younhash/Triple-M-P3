@@ -30,10 +30,6 @@ const getStateByID = async (
         const trails = await Trail.findAll({
             where:{stateId:id}
         })
-        
-        // state['trails'] = trails;
-        console.log(state);
-        
         return res.status(200).json({state, trails}) 
     }catch (error) {
         return res.status(500).send(error.message)

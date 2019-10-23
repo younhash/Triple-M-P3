@@ -13,7 +13,6 @@ export default function Trail({props}){
     let id = props.match.params.id;
     // let [trailPointsArr, setTrailPointsArr] = useState([]);
     let [trailObj, setTrailObj] = useState({});
-    let [newTrailObj, setNewTrailObj] = useState(trailObj)
     let [editTrailOpen, setEditTrailOpen] = useState(false)
 
     let {name, city, state} = trailObj;
