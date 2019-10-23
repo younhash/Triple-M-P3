@@ -1,26 +1,25 @@
 import React /*, {useState, useEffect}*/ from 'react';
 // import axios from 'axios';
-import CityCard from './city/CityCard';
+import StateCard from './state/StateCard';
 import TrailCard from './trail/TrailCard';
-import {trails} from './seedtrails';
-import {cities} from './seedcity';
 export default function ModelItemsList({model, search}){
-    // const [modelItemsArr, setModelItemsArr] = useState([]);
-    // const buildModelItemsArr = async () => {
-    //     let query = `/api/${model}s/`
-    //     try {
-    //         let response = await axios.get(query);
-    //         setModelItemsArr([...response.data]);
-    //     }
-    //     catch (error) {console.log('ERROR', error)}
-    // }
-    // useEffect(() => {
-    //     buildModelItemsArr();
-    // },[model])
+    const [modelItemsArr, setModelItemsArr] = useState([]);
+    const buildModelItemsArr = async () => {
+        let query = `/api/${model}s/`
+        try {
+            let response = await axios.get(query);
+            setModelItemsArr([...response.data]);
+        }
+        catch (error) {console.log('ERROR', error)}
+    }
+    useEffect(() => {
+        buildModelItemsArr();
+    },[model])
     
     // console.log(trails, model);
+    console.log(model, modelItemsArr);
     
-    let modelItemsArr = model==='trail' ? trails : cities;
+    // let modelItemsArr = model==='trail' ? trails : cities;
 
     return(
         <div className={`${model}-list`} >
@@ -32,10 +31,10 @@ export default function ModelItemsList({model, search}){
                         let trail = modelItem;
                         return <TrailCard trailObj={trail} key={`${model}-${idx}`} />
                     }
-                } else if (model === 'city') {
+                } else if (model === 'state') {
                     if (!!modelItem.name.match(regex) || !!modelItem.state.match(regex)){
-                        let city = modelItem;
-                        return <CityCard city={city} key={`${model}-${idx}`} />
+                        let state = modelItem;
+                        return <StateCard state={state} key={`${model}-${idx}`} />
                     }
                 }
             })}

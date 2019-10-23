@@ -14,7 +14,7 @@ import {trails} from '../seedtrails';
 export default function Trail({}){
     let [trailPointsArr, setTrailPointsArr] = useState([])
     let trailInfo = trails[0]
-    let {name, state, lat, lon} = trailInfo;
+    let {name, city, state, lat, lon} = trailInfo;
     console.log(trailInfo);
     // const getTrailPointsArr = async () => {
     // }

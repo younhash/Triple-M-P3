@@ -10,8 +10,8 @@ export default function TrailCard({trailObj}){
             <a className='trail-img-url' href={`/trails/${id}`} ><img className='trail-img' src={imgSmall} /></a>
             <div className='trail-info-container'>
                 <div className='trail-url'><a href={`/trails/${id}`} >{name}</a></div>
-                <div className='trail-state'>{state}</div>
-                <div className='trail-city'>{city}</div>
+                <div className='trail-name'>{name}</div>
+                <div className='trail-location'>{city}, {state}</div>
                 <div className='trail-lat'>{latitude}</div>
                 <div className='trail-lon'>{longitude}</div>
             </div>
