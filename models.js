@@ -25,6 +25,22 @@ State.init(
 
 // trail model
 export class Trail extends Model {};
+
+export class State extends Model{}
+State.init(
+    {
+        city: DataTypes.STRING,
+        state: DataTypes.STRING,
+        latitude: DataTypes.DOUBLE,
+        longitude: DataTypes.DOUBLE,
+    },
+    {
+        freezeTableName: true,
+        tableName: "States",
+        sequelize
+    }
+)
+
 Trail.init(
     {
         name: DataTypes.STRING,
