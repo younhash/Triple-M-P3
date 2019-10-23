@@ -47,6 +47,7 @@ export default function Trail({props}){
             <div className="edit-toggle">
                 x
             </div>
+            {/* <EditTrail trailObj={{trailObj}} /> */}
 
         </div>
     )

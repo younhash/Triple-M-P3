@@ -6,6 +6,22 @@ const sequelize = new Sequelize(
     }
 )
 
+// state model
+export class State extends Model{}
+State.init(
+    {
+        city: DataTypes.STRING,
+        state: DataTypes.STRING,
+        latitude: DataTypes.DOUBLE,
+        longitude: DataTypes.DOUBLE,
+    },
+    {
+        freezeTableName: true,
+        tableName: "States",
+        sequelize
+    }
+)
+
 // trail model
 export class Trail extends Model {};
 
