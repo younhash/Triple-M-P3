@@ -5,30 +5,32 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
 // components
-import Map from '../Map';
+// import Map from '../Map';
 import TrailCard from '../trail/TrailCard'
 
 export default function State({props}){
-    let id = props.match.params.id;
+    
     let [trailsArr, setTrailsArr] = useState([])
     let [stateObj, setStateObj] = useState({})
 
-    const getStateInfo = async () => {
-        let query = `/api/states/${id}`
-        let response = await axios.get(query);
-        let {state, trails} = response.data;
-        setStateObj({...state})
-        setTrailsArr([...trails])
-    }
     // let stateInfo;
     // let {city, state, lat, lon} = stateInfo;
     // console.log(stateInfo);
     // const getTrailsArr = async () => {
-    //     let response = await axios.get(`/cities/${id}`)
-    // }
+        //     let response = await axios.get(`/cities/${id}`)
+        // }
+    let id = props.match.params.id;
     useEffect(() => {
+        const getStateInfo = async () => {
+            let query = `/api/states/${id}`
+            let response = await axios.get(query);
+            let {state, trails} = response.data;
+            setStateObj({...state})
+            setTrailsArr([...trails])
+        }
         getStateInfo()
-    }, [])
+    }, [id]) // now changed to this
+    // }, []) // was originally this
     return(
         <div className='state'>
             {/* <Map info={{stateInfo}} model={'state'} /> */}
