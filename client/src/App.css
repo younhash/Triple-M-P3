@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
@@ -26,16 +30,14 @@ div.nav {
   /* display: flex; */
   /* flex-flow: column; */
 }
-  div.nav img{
-  }
-  div.nav .links {
-    /* justify-content: center; */
+
+  /* div.nav .links {
     width: 100%;
     position: absolute;
     z-index: 2;
     margin: 20px auto;
     top: 0;
-  }
+  } */
   div.nav .search{
     position: absolute;
     bottom: 0;
@@ -56,14 +58,16 @@ div.nav {
     margin: 10px 0 10px 60px;
   }
     div.nav .search input {
-      background: rgba(255, 255, 255, 0.671);
+      background: rgba(255, 255, 255, 0);
       height: 45px;
       width: 55%;
+      color: rgb(222, 222, 222);
+      font-size: 18px;
       border: 4px solid black;
       border-radius: 4px;
       padding: 12px 20px;
       margin: 2px;
-      box-sizing: border-box;
+      box-sizing: border-box;  
     }
 
 
@@ -95,10 +99,23 @@ div.state {
 }
 
 .links {
-  position: absolute;
+  /* position: fixed;
   width: 100%;
   margin: 20px 5px;
-  top: 0;
+  top: 0; */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  font-size: 10px;
+  position: fixed;
+  top: 6%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 100%;
+  padding: 6px;
+  text-align: center;
 }
 
 /* .nav a {
@@ -148,4 +165,11 @@ div.trail {
 
 .trail-info-container {
   flex-grow: 2;
+}
+
+
+@media screen and (max-width: 600px) {
+}
+
+@media screen and (max-width: 600px) {
 }
