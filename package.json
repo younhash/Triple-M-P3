@@ -4,13 +4,14 @@
   "description": "front end app to bike trail application",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run server",
     "babel-server": "babel-node ./server.js",
     "server": "babel-watch ./server.js",
     "resetdb": "babel-node ./resetDb.js",
-    "seed": "babel-node ./seed.js"
-  },
+    "seed": "babel-node ./seed.js",
+    "createdevdb": "createdb -U postgres -W ",
+    "rebuild-database": "npm run resetdb && npm run seed"
+},
   "repository": {
     "type": "git",
     "url": "https://git.generalassemb.ly/maluccio/Triple-M-P3.git"
