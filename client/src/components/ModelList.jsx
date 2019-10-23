@@ -4,7 +4,8 @@ import StateCard from './state/StateCard';
 import TrailCard from './trail/TrailCard';
 export default function ModelItemsList({model, search}){
     const [modelItemsArr, setModelItemsArr] = useState([]);
-    
+    const [cardList, setCardList] = useState([]);
+
     useEffect(() => {
         const buildModelItemsArr = async () => {
             let query = `/api/${model}s/`;
@@ -16,13 +17,12 @@ export default function ModelItemsList({model, search}){
         }
         buildModelItemsArr();
     },[model])
-
-    return(
-        <div className={`${model}-list`} >
-            {model}
-            {modelItemsArr.map((modelItem, idx) => {
+    useEffect(() => {
+        const buildCardList = () => {
+            let localCardList = modelItemsArr.map((modelItem, idx) => {
                 let regex = new RegExp(`^${search}`, 'i')
                 if (model === 'trail'){
+                    console.log('modelItem',modelItem);
                     if (!!modelItem.name.match(regex) || !!modelItem.state.match(regex) || !!modelItem.city.match(regex)){
                         let trail = modelItem;
                         return <TrailCard trailObj={trail} key={`${model}-${idx}`} />
@@ -34,7 +34,16 @@ export default function ModelItemsList({model, search}){
                     }
                 }
                 return ''
-            })}
+            })
+            setCardList([...localCardList])
+        }
+        buildCardList()
+    },[modelItemsArr])
+
+    return(
+        <div className={`${model}-list`} >
+            <div className="model-title">{model}</div>
+            <div className="card-list">{cardList}</div>
         </div>
     )
 }
