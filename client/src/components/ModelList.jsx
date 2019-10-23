@@ -8,10 +8,7 @@ export default function ModelItemsList({model, search}){
         let query = `/api/${model}s/`;
         try {
             let response = await axios.get(query);
-            // console.log('asdf' ,);
-            
-            // console.log('query',{...response.data.states});
-            setModelItemsArr([...response.data.states]);
+            setModelItemsArr([...response.data[`${model}s`]]);
         }
         catch (error) {console.log('ERROR', error)}
         
@@ -19,11 +16,6 @@ export default function ModelItemsList({model, search}){
     useEffect(() => {
         buildModelItemsArr();
     },[model])
-    
-    // console.log(trails, model);
-    // console.log(model, modelItemsArr);
-    
-    // let modelItemsArr = model==='trail' ? trails : cities;
 
     return(
         <div className={`${model}-list`} >

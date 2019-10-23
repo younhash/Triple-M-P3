@@ -37,7 +37,8 @@ function App() {
         <Switch>
           <Route exact path='/'></Route>
           <Route exact path='/states'><ModelItemsList model={'state'} search={search} /></Route>
-          <Route exact path='/states/:id'><State /></Route>
+          {/* <Route exact path='/states/:id'><State /></Route> */}
+          <Route exact path='/states/:id' render={(props) => <State props={props} />} />
           <Route exact path='/trails'><ModelItemsList model={'trail'} search={search} /></Route>
           <Route exact path='/trails/:id'><Trail /></Route>
           <Route exact path='/trails/new'><CreateTrail /></Route>

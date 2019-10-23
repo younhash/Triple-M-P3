@@ -6,8 +6,7 @@ export default function Search({fxns, search}){
     return(
         <div className='search'>
             <form onSubmit={searchSubmit}>
-                <input onChange={searchChange} value={search} ></input>
-                <button >Search</button>
+                <input onChange={searchChange} value={search} placeholder='Search' ></input>
             </form>
         </div>
     )
