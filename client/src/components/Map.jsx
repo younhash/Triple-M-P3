@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect} from 'react';
 import ReactMapGL from 'react-map-gl'
 export default function Map(){
     const viewPortWidth = () => {
