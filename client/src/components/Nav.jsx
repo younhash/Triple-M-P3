@@ -4,7 +4,6 @@ import Search from './Search';
 
 export default function Nav({searchChange, search}){
     // console.log(searchChange, search);
-    
     return(
         <div className='nav'>
             <div className="links">

@@ -10,7 +10,9 @@ export default function ModelItemsList({model, search}){
         const buildModelItemsArr = async () => {
             let query = `/api/${model}s/`;
             try {
+                console.log('moe3l',query);
                 let response = await axios.get(query);
+
                 setModelItemsArr([...response.data[`${model}s`]]);
             }
             catch (error) {console.log('ERROR', error)}
@@ -21,7 +23,9 @@ export default function ModelItemsList({model, search}){
         const buildCardList = () => {
             let localCardList = modelItemsArr.map((modelItem, idx) => {
                 let regex = new RegExp(`^${search}`, 'i')
+                
                 if (model === 'trail'){
+
                     console.log('modelItem',modelItem);
                     if (!!modelItem.name.match(regex) || !!modelItem.state.match(regex) || !!modelItem.city.match(regex)){
                         let trail = modelItem;
