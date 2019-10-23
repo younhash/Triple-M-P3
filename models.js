@@ -14,6 +14,7 @@ State.init(
         state: DataTypes.STRING,
         latitude: DataTypes.DOUBLE,
         longitude: DataTypes.DOUBLE,
+
     },
     {
         freezeTableName: true,
@@ -33,16 +34,23 @@ Trail.init(
         imgSmallMed: DataTypes.STRING,
         imgMedium: DataTypes.STRING,
         city: DataTypes.STRING,
-        stateName: DataTypes.STRING,
+        state: DataTypes.STRING,
         url: DataTypes.STRING,
         difficulty: DataTypes.STRING,
         length: DataTypes.DOUBLE,
         latitude: DataTypes.DOUBLE,
-        longitude: DataTypes.DOUBLE
+        longitude: DataTypes.DOUBLE,
+        stateId: {
+            type: Sequelize.INTEGER,
+            references: {
+                model: 'States', // 'persons' refers to table name
+                key: 'id', // 'id' refers to column name in persons table
+            }
+        }
     },
     {
         freezeTableName: true,
-        modelName:"trails",
+        tableName: "trails",
         sequelize
     },
 )
@@ -58,7 +66,7 @@ User.init(
     },
     {
         freezeTableName: true,
-        modelName: "users",
+        tableName: "users",
         sequelize
     }
 )
