@@ -23,6 +23,8 @@ import EditUser from './components/user/EditUser';
 // styling
 import './App.css';
 
+//Title
+import Doc from './components/Doc'
 
 function App() {
   let [search, setSearch] = useState('');
@@ -31,7 +33,9 @@ function App() {
       setSearch(searchValue)
     }
   return (
+    
     <BrowserRouter>
+    <Doc/>
       <div className="App">
         <Nav  searchChange={searchChange} search={search}/>
         <Switch>
