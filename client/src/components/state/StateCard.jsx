@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function StateCard({stateObj}){
-    let {city, state, lat, lon, id} = stateObj;
+    let {state, lat, lon, id} = stateObj;
     
     return(
         <div className='state'>

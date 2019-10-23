@@ -2,7 +2,7 @@ import { Model, DataTypes, Sequelize } from 'sequelize'
 
 const sequelize = new Sequelize(
     {   database: "bikingtrails_db",
-        dialect: "postgres",
+        dialect: "postgres"
     }
 )
 
@@ -14,6 +14,7 @@ State.init(
         state: DataTypes.STRING,
         latitude: DataTypes.DOUBLE,
         longitude: DataTypes.DOUBLE,
+
     },
     {
         freezeTableName: true,
@@ -65,8 +66,8 @@ Trail.init(
     },
     {
         freezeTableName: true,
-        tableName:"Trails",
-        sequelize,
+        tableName: "trails",
+        sequelize
     },
 )
 
@@ -77,13 +78,14 @@ User.init(
     {
         firstName: DataTypes.STRING,
         lastName: DataTypes.STRING,
-        alias: DataTypes.STRING,
+        alias: DataTypes.STRING
     },
     {
         freezeTableName: true,
-        tableName: "Users",
+        tableName: "users",
         sequelize
     }
 )
+
 State.hasMany(Trail, {onDelete: 'CASCADE'});
 Trail.belongsTo(State)

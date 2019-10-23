@@ -4,7 +4,6 @@ import Search from './Search';
 
 export default function Nav({searchChange, search}){
     // console.log(searchChange, search);
-    
     return(
         <div className='nav'>
             <img src='/crop-david-marcu-unsplash.jpg' alt='bike riding in the mountain' width="100%" height=""/>
@@ -12,6 +11,8 @@ export default function Nav({searchChange, search}){
                 <Link to='/'>Home</Link>
                 <Link to='/states'>States</Link>
                 <Link to='/trails'>Trails</Link>
+                <Link to='/user/new' >Create new user!</Link>
+                <Link to='/user/edit' >Edit user</Link>
             </div> 
             <Search fxns={{searchChange}} search={search} />
             {/* <ModelList model={'state'} search={search} /> */}

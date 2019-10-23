@@ -128,7 +128,20 @@ div.trail {
   .edit-toggle{
     padding: 10px;
     background: green;
+    cursor: pointer;
   }
+  .trail-edit{
+    position: absolute;
+    right: 0;
+    padding: 40px;
+    background: rgba(158, 157, 157, 0.952);
+  }
+  .trail-edit-card{
+    background: purple;
+  }
+    .input-update-trail-description{
+      width: 90%;
+    }
 /* div.trail-list {
   text-align: right;
 } */
