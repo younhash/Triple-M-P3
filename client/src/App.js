@@ -45,7 +45,7 @@ function App() {
           <Route exact path='/trails/:id/edit'><EditTrail /></Route>
           <Route exact path='/user'><User /></Route>
           <Route exact path='/user/new'><NewUser /></Route>
-          <Route exact path='/user/edit'><EditUser /></Route>
+          <Route exact path='/user/:id/edit'render={(props) => <EditUser props={props} />} />
         </Switch>
       </div>
     </BrowserRouter>
