@@ -12,7 +12,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   font-size: calc(10px + 2vmin);
   color: white;
 }
@@ -119,4 +119,21 @@ div.trail {
   padding: 16px 30px;
   margin: 0 10px;
   text-decoration: none;
+}
+
+div.trail {
+  display: flex;
+  width: 100%;
+}
+
+div.trail img {
+  border-radius: 5px;
+} 
+
+/* div.trail-list {
+  text-align: right;
+} */
+
+.trail-info-container {
+  flex-grow: 2;
 }
