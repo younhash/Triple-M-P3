@@ -12,36 +12,27 @@ export default function EditUser({props}){
         }catch (error) {console.log(error, "you screwed up")}
     }
 
-    useEffect(()=>{
-        getUserInfo();
-    },[])
-
-    let [newFirstName, setNewFirstName] = useState(userObj['firstName']);
-    let [newLastName, setNewLastName] = useState(userObj['lastName']);
-    let [newAlias, setNewAlias] = useState(userObj['alias']);
+    useEffect(() => {getUserInfo()},[])
 
     const submitHandler = async (e) => {
         e.preventDefault();
         // make the call
         let query = `/api/users/${id}/edit`
-        let newUserObj = {'firstName':newFirstName, 'lastName': newLastName, 'alias':newAlias}
+        let newUserObj = {...userObj}
         try {
-            let resp = await axios.put(query, newUserObj);
-            console.log(resp);
+            let resp = await axios.put(query, {...newUserObj});
+            document.location = '/user/edit';
         } catch (err) {console.log(err)}
     }
-
-    let firstNameElem = <input className='input-update-user-description' type='text' onChange={(e) => {setNewFirstName(e.target.value)}} value={newFirstName}  />
-    let lastNameElem = <input className='input-update-user-description' type='text' onChange={(e) => {setNewLastName(e.target.value)}} value={newLastName}  />
-    let aliasElem = <input className='input-update-user-description' type='text' onChange={(e) => {setNewAlias(e.target.value)}} value={newAlias}  />
 
     return(
         <div className='user-edit'>
             <div className='user-edit-card' >
                 <form onSubmit={submitHandler} >
-                    {firstNameElem}
-                    {lastNameElem}
-                    {aliasElem}
+                    <input className='input-update-user-firstname' type='text' onChange={(e) => {setUserObj({...userObj, firstName:e.target.value})}} value={userObj.firstName}  />
+                    <input className='input-update-user-lastname' type='text' onChange={(e) => {setUserObj({...userObj, lastName:e.target.value})}} value={userObj.lastName}  />
+                    <input className='input-update-user-alias' type='text' onChange={(e) => {setUserObj({...userObj, alias:e.target.value})}} value={userObj.alias}  />
+                    <button type='submit'>Submit</button>
                 </form>
             </div>
         </div>
