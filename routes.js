@@ -25,7 +25,14 @@ const getStateByID = async (
         const state = await State.findOne({
             where: {id: id}
         })
-        return res.status(200).json({state}) 
+        const trails = await Trail.findAll({
+            where:{stateId:id}
+        })
+        
+        // state['trails'] = trails;
+        console.log(state);
+        
+        return res.status(200).json({state, trails}) 
     }catch (error) {
         return res.status(500).send(error.message)
     }
@@ -90,25 +97,6 @@ const getTrailByID = async (
         return res.status(500).send(error.message)
     }
 }
-const getTrailsByCity = async (
-    /**@type{express.Request}*/req,
-    /**@type{express.Response}*/res) => {   
-    try{
-        const trails = await Trail.findAll({
-             include: [{
-                 model: City,
-                where: {state: req.params.state}
-            }]
-        })
-        console.log(trails)
-        if(trails){
-        return res.status(200).json({trails}) 
-    }
-        return res.status(404).send('The city you selected is still finding it\'s trails')   
-    }catch (error) {
-        return res.status(500).send(error.message)
-    }
-}
 const updateTrail = (/** @type {express.Request} */ req, /** @type {express.Response} */ res)=>{
     return Trail.update(req.body, {where: {id: req.params.id}}).then(trail => {
         return res.status(200).json({updated: trail})
@@ -119,5 +107,4 @@ export const allTrailsRouter = Router()
 allTrailsRouter.get("/trails", getAllTrails)
 allTrailsRouter.get("/trails/:id", getTrailByID)
 allTrailsRouter.put("/trails/:id/edit", updateTrail)
-// allTrailsRouter.get("/trails/:city", getTrailsByCity)
 

@@ -5,10 +5,10 @@ import {BrowserRouter, Route, Switch} from 'react-router-dom';
 // general components
 import ModelItemsList from './components/ModelList';
 import Nav from './components/Nav';
-import Map from './components/Map';
+// import Map from './components/Map';
 
-// city components
-import City from './components/city/City';
+// state components
+import State from './components/state/State'
 
 // trail components
 import CreateTrail from './components/trail/CreateTrail';
@@ -36,10 +36,11 @@ function App() {
         <Nav  searchChange={searchChange} search={search}/>
         <Switch>
           <Route exact path='/'></Route>
-          <Route exact path='/cities'><ModelItemsList model={'city'} search={search} /></Route>
-          <Route exact path='/cities/:id'><City /></Route>
+          <Route exact path='/states'><ModelItemsList model={'state'} search={search} /></Route>
+          {/* <Route exact path='/states/:id'><State /></Route> */}
+          <Route exact path='/states/:id' render={(props) => <State props={props} />} />
           <Route exact path='/trails'><ModelItemsList model={'trail'} search={search} /></Route>
-          <Route exact path='/trails/:id'><Trail /></Route>
+          <Route exact path='/trails/:id' render={(props) => <Trail props={props} />} />
           <Route exact path='/trails/new'><CreateTrail /></Route>
           <Route exact path='/trails/:id/edit'><EditTrail /></Route>
           <Route exact path='/user'><User /></Route>
