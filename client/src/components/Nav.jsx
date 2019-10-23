@@ -12,6 +12,8 @@ export default function Nav({searchChange, search}){
                 <Link to='/'>Home</Link>
                 <Link to='/states'>States</Link>
                 <Link to='/trails'>Trails</Link>
+                <Link to='/user/new' >Create new user!</Link>
+                <Link to='/user/edit' >Edit user</Link>
             </div> 
             <Search fxns={{searchChange}} search={search} />
             {/* <ModelList model={'state'} search={search} /> */}

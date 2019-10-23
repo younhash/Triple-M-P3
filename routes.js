@@ -43,12 +43,6 @@ allStatesRouter.get("/states/:id", getStateByID)
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////// USERS (BELOW) /////////////////////////////////////////////
-const addNewUser = (/** @type {express.Request} */req, /** @type {express.Response} */ res) => {
-    let {firstName, lastName, alias} = req.body
-    return User.create({firstName, lastName, alias}).then(user => {return res.status(200).json({created: user}) })
-    .catch(error => {return res.status(500).send(error.message)})
-}
-
 const getAllUsers = async (
     /**@type{express.Request}*/req,
     /**@type{express.Response}*/res) => {
@@ -59,6 +53,42 @@ const getAllUsers = async (
         return res.status(500).send(error.message)
     }
 }
+const getUserById = async (
+    /**@type{express.Request}*/req,
+    /**@type{express.Response}*/res
+) => {
+    const id = req.params.id;
+    try{
+        const user = await User.findOne({
+            where: {
+                id:id
+            }
+        })
+        return res.status(200).json(user)
+    }catch (error) {
+        return res.status(500).send(error.message)
+    }
+}
+
+const updateUserById = async (
+    /**@type{express.Request}*/req,
+    /**@type{express.Response}*/res
+) => {
+    const id = req.params.id;
+    try{
+        const user = await User.findOne({
+            where: {id:id}
+        })
+        return res.status(200).json(user)
+    } catch (error) {
+        return res.status(500).send(error.message)
+    }
+}
+const addNewUser = (/** @type {express.Request} */req, /** @type {express.Response} */ res) => {
+    let {firstName, lastName, alias} = req.body
+    return User.create({firstName, lastName, alias}).then(user => {return res.status(200).json({created: user}) })
+    .catch(error => {return res.status(500).send(error.message)})
+}
 
 const deleteUser = (/**@type{express.Request}*/req, /**@type{express.Response}*/res) => {
     return User.destroy({where: {id: req.params.id}}).then(user => {return res.status(200).json({deleted: user}) })
@@ -67,6 +97,8 @@ const deleteUser = (/**@type{express.Request}*/req, /**@type{express.Response}*/
 
 export const userRouter = Router()
 userRouter.get('/users', getAllUsers)
+userRouter.get('/users/:id', getUserById)
+userRouter.put('/users/:id', updateUserById)
 userRouter.post("/users", addNewUser)
 userRouter.delete("/users", deleteUser)
 ////////////////////////////////////////// USERS (ABOVE) /////////////////////////////////////////////
@@ -81,8 +113,6 @@ const getAllTrails = async (
     ) => {
         try{
             const trails = await Trail.findAll()
-            console.log("trails", Trail);
-            
             return res.status(200).json({trails}) 
         }catch (error) {
             return res.status(500).send(error.message)
