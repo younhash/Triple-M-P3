@@ -2,9 +2,25 @@ import { Model, DataTypes, Sequelize } from 'sequelize'
 
 const sequelize = new Sequelize(
     {   database: "bikingtrails_db",
-        dialect: "postgres",
+        dialect: "postgres"
     }
 )
+
+export class State extends Model{}
+State.init(
+    {
+        city: DataTypes.STRING,
+        name: DataTypes.STRING,
+        latitude: DataTypes.DOUBLE,
+        longitude: DataTypes.DOUBLE
+    },
+    {
+        freezeTableName: true,
+        modelName: "state",
+        sequelize
+    }
+)
+
 
 // trail model
 export class Trail extends Model {};
@@ -17,41 +33,20 @@ Trail.init(
         imgSmallMed: DataTypes.STRING,
         imgMedium: DataTypes.STRING,
         city: DataTypes.STRING,
-        state: DataTypes.STRING,
+        stateName: DataTypes.STRING,
         url: DataTypes.STRING,
         difficulty: DataTypes.STRING,
         length: DataTypes.DOUBLE,
         latitude: DataTypes.DOUBLE,
-        longitude: DataTypes.DOUBLE,
-        stateId: {
-            type: Sequelize.INTEGER,
-            references: {
-                model: 'States', // 'persons' refers to table name
-                key: 'id', // 'id' refers to column name in persons table
-            }
-        }
+        longitude: DataTypes.DOUBLE
     },
     {
         freezeTableName: true,
-        tableName:"Trails",
-        sequelize,
+        modelName:"trails",
+        sequelize
     },
 )
 
-export class State extends Model{}
-State.init(
-    {
-        city: DataTypes.STRING,
-        state: DataTypes.STRING,
-        latitude: DataTypes.DOUBLE,
-        longitude: DataTypes.DOUBLE,
-    },
-    {
-        freezeTableName: true,
-        tableName: "States",
-        sequelize
-    }
-)
 
 // user model
 export class User extends Model{}
@@ -59,13 +54,14 @@ User.init(
     {
         firstName: DataTypes.STRING,
         lastName: DataTypes.STRING,
-        alias: DataTypes.STRING,
+        alias: DataTypes.STRING
     },
     {
         freezeTableName: true,
-        tableName: "Users",
+        modelName: "users",
         sequelize
     }
 )
+
 State.hasMany(Trail, {onDelete: 'CASCADE'});
 Trail.belongsTo(State)

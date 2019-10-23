@@ -1,9 +1,9 @@
-import { Model, DataTypes, Sequelize } from 'sequelize'
+// import { Model, DataTypes, Sequelize } from 'sequelize'
 
-const sequelize = new Sequelize({
-    "database": "bikingtrails_db",
-    "dialect": "postgres"
-});
+// const sequelize = new Sequelize({
+//     "database": "bikingtrails_db",
+//     "dialect": "postgres"
+// });
 // // trail model
 // export class Trail extends Model{}
 // Trail.init(
@@ -38,20 +38,20 @@ const sequelize = new Sequelize({
 // )
 
 // state model
-export class State extends Model{}
-State.init(
-    {
-        city: DataTypes.STRING,
-        state: DataTypes.STRING,
-        latitude: DataTypes.DOUBLE,
-        longitude: DataTypes.DOUBLE,
-    },
-    {
-        freezeTableName: true,
-        tableName: "States",
-        sequelize
-    }
-)
+// export class State extends Model{}
+// State.init(
+//     {
+//         city: DataTypes.STRING,
+//         state: DataTypes.STRING,
+//         latitude: DataTypes.DOUBLE,
+//         longitude: DataTypes.DOUBLE,
+//     },
+//     {
+//         freezeTableName: true,
+//         tableName: "States",
+//         sequelize
+//     }
+// )
 
 
 

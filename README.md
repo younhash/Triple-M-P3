@@ -33,7 +33,7 @@ https://api.opencagedata.com/geocode/v1/json?q=New York City&key=15ff9fe808984f1
 - Update a trail description
 - Delete user and or trail descriptions
 - Render data on page
-- Add map api to identify a location with trails
+
 
 #### PostMVP
 
@@ -41,6 +41,7 @@ https://api.opencagedata.com/geocode/v1/json?q=New York City&key=15ff9fe808984f1
 - add pins on map
 - Allow user to choose favorites
 - Save their choices in our database
+- Add map api to identify a location with trails
 
 ## ERD Diagram
 
@@ -80,21 +81,21 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Adding Search| M | 2 hrs| hrs | hrs |
-| Adding Trails| H | 4 hrs| hrs | hrs |
-| Adding City  | H | 5 hrs| hrs | hrs |
+| Adding Search| M | 2 hrs| 1 hrs |1 hrs |
+| Adding Trails| H | 4 hrs| 4hrs | 4hrs |
+| Adding state  | H | 5 hrs| 2.5hrs | 4hrs |
 | Adding Map design  | M | 4 hrs| hrs | hrs |
 | Adding Map API| M | 4 hrs| hrs | hrs |
-| Adding Nav| M | 2 hrs| hrs | hrs |
+| Adding Nav| M | 2 hrs| 1hrs | hrs |
 | Adding Geolocation| M | 3 hrs| hrs | hrs |
 | Adding Create Trail| M | 2 hrs| hrs | hrs |
 | Building DataBase | H | 2 hrs| hrs | hrs |
 | Building Trails Tables| H | 4 hrs| hrs | hrs |
-| Building City Table| H | 4 hrs| hrs | hrs |
-| Building Trails routes| H | 4 hrs| hrs | hrs |
-| Building City Routes | H | 4 hrs| hrs | hrs |
+| Building state Table| H | 4 hrs| 4hrs | 4hrs |
+| Building Trails routes| H | 4 hrs|4 hrs | hrs |
+| Building state Routes | H | 4 hrs| 4hrs | 4hrs |
 | Seeding tables| M | 3 hrs| hrs | hrs |
-| Database Migration | M | 2 hrs| hrs | hrs |
+| Database Migration | M | 2 hrs| 1hrs | 1 hrs |
 | Debugging| M | 4 hrs| hrs | hrs |
 | Project Approval | M | 1 hrs| hrs | hrs |
 | Working with backend api | H | 3 hrs| hrs | hrs |
@@ -117,8 +118,6 @@ function reverse(string) {
 ```
 
 ## Issues and Resolutions
- Use this section to list of all major issues encountered and their resolution.
-
-#### SAMPLE.....
-**ERROR**: app.js:34 Uncaught SyntaxError: Unexpected identifier                                
-**RESOLUTION**: Missing comma after first object in sources {} object
+**ERROR**: (node:9310) UnhandledPromiseRejectionWarning: SequelizeDatabaseError: relation "state" does not exist
+                               
+**RESOLUTION**: Needed to move State model above trail model in models.js. Moved await STATE.sync ahead of Trail.syc in resetDb.js
