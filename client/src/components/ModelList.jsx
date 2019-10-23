@@ -11,8 +11,8 @@ export default function ModelItemsList({model, search}){
             setModelItemsArr([...response.data[`${model}s`]]);
         }
         catch (error) {console.log('ERROR', error)}
-        
     }
+
     useEffect(() => {
         buildModelItemsArr();
     },[model])

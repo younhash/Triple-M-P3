@@ -40,7 +40,7 @@ function App() {
           {/* <Route exact path='/states/:id'><State /></Route> */}
           <Route exact path='/states/:id' render={(props) => <State props={props} />} />
           <Route exact path='/trails'><ModelItemsList model={'trail'} search={search} /></Route>
-          <Route exact path='/trails/:id'><Trail /></Route>
+          <Route exact path='/trails/:id' render={(props) => <Trail props={props} />} />
           <Route exact path='/trails/new'><CreateTrail /></Route>
           <Route exact path='/trails/:id/edit'><EditTrail /></Route>
           <Route exact path='/user'><User /></Route>

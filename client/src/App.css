@@ -56,6 +56,7 @@ div.nav {
     margin: 10px 0 10px 60px;
   }
     div.nav .search input {
+      background: rgba(255, 255, 255, 0.671);
       height: 45px;
       width: 55%;
       border: 4px solid black;
