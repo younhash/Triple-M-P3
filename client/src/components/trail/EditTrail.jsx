@@ -15,7 +15,7 @@ export default function EditTrail({trailObj, setTrailObj}){
             setTrailObj(newTrailObj)
         } catch (err) {console.log(err)}
     }
-    const blurHandler = async (e) => {setTrailObj({...trailObj})}
+    const blurHandler = async () => {setTrailObj({...trailObj})}
     let inputElem = <input className='input-update-trail-description' type='text' onChange={editDescription} value={updatedTrailDesc} onBlur={blurHandler} autoFocus />
 
     return(
