@@ -24,6 +24,8 @@ import EditUserMenu from './components/user/EditUserMenu';
 // styling
 import './App.css';
 
+//Title
+import Doc from './components/Doc'
 
 function App() {
   let [search, setSearch] = useState('');
@@ -32,6 +34,7 @@ function App() {
       setSearch(searchValue)
     }
   return (
+    
     <BrowserRouter>
       {document.title = 'BikeStar'}
       <div className="App">
