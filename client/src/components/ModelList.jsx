@@ -46,7 +46,7 @@ export default function ModelItemsList({model, search}){
 
     return(
         <div className={`${model}-list`} >
-            <div className="model-title">{model}</div>
+            <div className="model-title">{model === 'trail' ? 'Trail': "State"}s</div>
             <div className="card-list">{cardList}</div>
         </div>
     )
