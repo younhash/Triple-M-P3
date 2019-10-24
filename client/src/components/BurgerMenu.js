@@ -1,12 +1,8 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
+import {Link} from 'react-router-dom';
 
-class BurgerMenu extends React.Component {
-    constructor() {
-        super()
-        this.state = {
 
-        }
-    }
+const BurgerMenu = () => {
 
     // myFunction = () => {
     //     var x = document.querySelector(".links");
@@ -17,13 +13,13 @@ class BurgerMenu extends React.Component {
     //     }
     //   }
 
-    render() {
-        return (
-            <div className="menu-toggle" onClick="myFunction()">
-                menu
-            </div>
-        )
-    }
+    return (
+        <div className="burger-menu" >
+            <Link to='/user/new' >Create new user!</Link>
+            <Link to='/user/edit' >Edit user</Link>
+        </div>
+    )
+
 }
 
 export default BurgerMenu
