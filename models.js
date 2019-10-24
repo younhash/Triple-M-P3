@@ -24,10 +24,8 @@ State.init(
 )
 
 // trail model
-export class Trail extends Model {};
-
-export class State extends Model{}
-State.init(
+export class Trail extends Model {}
+Trail.init(
     {
         city: DataTypes.STRING,
         state: DataTypes.STRING,
