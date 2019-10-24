@@ -39,8 +39,7 @@ export default function Trail({props}){
 
     return(
         <div className='trail'>
-            <img className='trail-img' src={imgMedium} alt='' />
-            <Map info={{trailObj}} model={'trail'} />
+            <img className='trail-img' src={imgMedium} alt='' width="400" />
             <div className='trail-name'>Trail: {name}</div>
             <div className='trail-location'>Location: {city}, {state}</div>
             <div className='trail-coordinates'>Latitude: {latitude}, {longitude}</div>
@@ -53,6 +52,7 @@ export default function Trail({props}){
                 <div className="edit-toggle" onClick={() => {setEditTrailOpen(!editTrailOpen)}} >x</div>
                 {(editTrailOpen) && <EditTrail trailObj={trailObj} setTrailObj={setTrailObj} />}
             </div>
+            <Map info={{trailObj}} model={'trail'} />
             {/* <EditTrail trailObj={{trailObj}} /> */}
 
         </div>

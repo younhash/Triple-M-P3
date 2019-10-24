@@ -33,7 +33,7 @@ function App() {
     }
   return (
     <BrowserRouter>
-      {document.title = 'BikeStar'}
+      {/* {document.title = 'BikeStar'} */}
       <div className="App">
         <Nav  searchChange={searchChange} search={search}/>
         <Switch>

@@ -109,7 +109,7 @@ div.state {
   font-weight: bold;
   font-size: 10px;
   position: fixed;
-  top: 6%;
+  top: 10%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
@@ -218,6 +218,11 @@ document.title {
 
 
 @media screen and (max-width: 600px) {
+  /* .menu-toggle {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+  } */
 }
 
 @media screen and (max-width: 600px) {
