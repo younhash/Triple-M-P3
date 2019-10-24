@@ -106,7 +106,7 @@ userRouter.get('/users', getAllUsers)
 userRouter.get('/users/:id', getUserById)
 userRouter.put('/users/:id/edit', updateUserById)
 userRouter.post("/users", addNewUser)
-userRouter.delete("/users", deleteUser)
+userRouter.delete("/users/:id", deleteUser)
 ////////////////////////////////////////// USERS (ABOVE) /////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -149,9 +149,17 @@ const updateTrail = (
         return res.status(200).json({updated: trail})
     }).catch(error => { return res.status(500).send(error.message)})
 }
+const createTrail = (
+    /** @type {express.Request} */ req,
+    /** @type {express.Response} */ res
+) => {
+    return Trail.create({...req.body}).then(user => {return res.status(201).json({created:{...req.body}})})
+    // return User.create({firstName, lastName, alias}).then(user => {return res.status(200).json({created: user}) })
+}
 
 export const allTrailsRouter = Router()
 allTrailsRouter.get("/trails", getAllTrails)
+allTrailsRouter.post("/trails", createTrail)
 allTrailsRouter.get("/trails/:id", getTrailByID)
 allTrailsRouter.put("/trails/:id/edit", updateTrail)
 ////////////////////////////////////////// TRAILS (ABOVE) /////////////////////////////////////////////

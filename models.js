@@ -66,7 +66,7 @@ Trail.init(
     },
     {
         freezeTableName: true,
-        tableName: "trails",
+        tableName: "Trails",
         sequelize
     },
 )

@@ -12,6 +12,7 @@ export default function EditUser({props}){
         }catch (error) {console.log(error, "you screwed up")}
     }
 
+    // on page's first render, load the user info
     useEffect(() => {getUserInfo()},[])
 
     const submitHandler = async (e) => {
@@ -25,6 +26,17 @@ export default function EditUser({props}){
         } catch (err) {console.log(err)}
     }
 
+    const handleDelete = async (e) => {
+        let query = `/api/users/${id}`;
+        try{
+            let res = await axios.delete(query);
+            if (res.data.deleted === 1){
+                alert("Deleted user!");
+                document.location = '/user/edit';
+            }
+        } catch (err) {console.log(err)};
+    }
+
     return(
         <div className='user-edit'>
             <div className='user-edit-card' >
@@ -34,6 +46,7 @@ export default function EditUser({props}){
                     <input className='input-update-user-alias' type='text' onChange={(e) => {setUserObj({...userObj, alias:e.target.value})}} value={userObj.alias}  />
                     <button type='submit'>Submit</button>
                 </form>
+                <button onClick={handleDelete} >Delete</button>
             </div>
         </div>
     )

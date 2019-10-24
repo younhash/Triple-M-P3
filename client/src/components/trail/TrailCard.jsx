@@ -3,7 +3,6 @@ import React from 'react';
 export default function TrailCard({trailObj}){
     
     let {name, city, state, latitude, longitude, imgSmall, id} = trailObj;
-    console.log(imgSmall)
     return(
         <div className='trail'>
             <a className='trail-img-url' href={`/trails/${id}`} ><img className='trail-img' alt='' src={imgSmall} width="200px"/></a>
