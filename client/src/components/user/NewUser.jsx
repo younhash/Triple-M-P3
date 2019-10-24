@@ -4,7 +4,7 @@ export default function NewUser(){
     let [firstName, setFirstName] = useState('')
     let [lastName, setLastName] = useState('')
     let [alias, setAlias] = useState('')
-    console.log('hei', firstName, lastName, alias);
+
     const submitHandler = async (e) => {
         e.preventDefault();
         // make the call

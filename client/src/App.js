@@ -35,20 +35,19 @@ function App() {
     <BrowserRouter>
       {document.title = 'BikeStar'}
       <div className="App">
-        <Nav  searchChange={searchChange} search={search}/>
+        <Nav searchChange={searchChange} search={search}/>
         <Switch>
-          <Route exact path='/'></Route>
-          <Route exact path='/states'><ModelItemsList model={'state'} search={search} /></Route>
-          {/* <Route exact path='/states/:id'><State /></Route> */}
           <Route exact path='/states/:id' render={(props) => <State props={props} />} />
-          <Route exact path='/trails'><ModelItemsList model={'trail'} search={search} /></Route>
-          <Route exact path='/trails/:id' render={(props) => <Trail props={props} />} />
+          <Route exact path='/states'><ModelItemsList model={'state'} search={search} /></Route>
           <Route exact path='/trails/new'><CreateTrail /></Route>
           <Route exact path='/trails/:id/edit'><EditTrail /></Route>
-          <Route exact path='/user'><User /></Route>
-          <Route exact path='/user/new'><NewUser /></Route>
-          <Route exact path='/user/edit'><EditUserMenu /></Route>
+          <Route exact path='/trails/:id' render={(props) => <Trail props={props} />} />
+          <Route exact path='/trails'><ModelItemsList model={'trail'} search={search} /></Route>
           <Route exact path='/user/:id/edit'render={(props) => <EditUser props={props} />} />
+          <Route exact path='/user/edit'><EditUserMenu /></Route>
+          <Route exact path='/user/new'><NewUser /></Route>
+          <Route exact path='/user'><User /></Route>
+          <Route exact path='/'></Route>
         </Switch>
       </div>
     </BrowserRouter>
