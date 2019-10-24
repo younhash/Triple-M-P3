@@ -166,7 +166,7 @@ input[type=text]:focus {
   outline: none;
 }
 
-.user-edit-card form {
+.user-edit-card form, .create-trail {
   padding: 14px;
   margin: 0 auto;
   border: none;
