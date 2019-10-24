@@ -15,9 +15,13 @@ export default function Nav({searchChange, search}){
     return(
         <div className='nav'>
             <div className="links">
-                <Link to='/'>BikeStar</Link>
+            <div className="bike-star">
+            <Link to='/'>BikeStar</Link>
+            </div>
+            <div className="state-trail">
                 <Link to='/states'>States</Link>
                 <Link to='/trails'>Trails</Link>
+            </div>
                 {/* <Link to=  >Bur Menu</Link> */}
                 {/* <BurgerMenu /> */}
                 <div className="user-menu" onClick={clickHandler}>
