@@ -14,9 +14,9 @@ export default function CreateTrail(){
         latitude: {val:'',idx:8},
         longitude: {val:'',idx:9},
     })
-    let keysList = Object.keys(trailObj)
+    // let keysList = Object.keys(trailObj)
     
-    let [newFormArr, setNewFormArr] = useState([])
+    // let [newFormArr, setNewFormArr] = useState([])
     const submitHandler = async (e) => {
         e.preventDefault();
 
@@ -31,7 +31,7 @@ export default function CreateTrail(){
         } catch (err) {console.log(err)}
     }
     const changeHandler = (e, key) => {
-        setTrailObj({...trailObj, [key]: e.target.value });
+        setTrailObj({...trailObj, [key]: {val: e.target.value} });
     }
 
     const buildForm = () => {
@@ -41,7 +41,7 @@ export default function CreateTrail(){
                 <div className={`new-trail-${key}`} >
                     {key}<input onChange={
                         (e) => {changeHandler(e, key)}
-                    } value={trailObj[key].val}/>
+                    } value={trailObj[key].val} key={`input-trail-${key}`} />
                 </div>
             formArr.push(formElem);
         }
