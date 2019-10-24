@@ -42,7 +42,7 @@ export default function Trail({props}){
             <img className='trail-img' src={imgMedium} alt='' />
             {/* <Map info={{trailObj}} model={'trail'} /> */}
             <div className='trail-name'>{name}</div>
-            <div className='trail-location'>{city}, {state}</div>
+            <div className='trail-location'>City: {city}, State: {state}</div>
             <div className='trail-coordinates'>{latitude}, {longitude}</div>
             <div className='trail-description'>
                 <div className="trail-length">{length}</div>

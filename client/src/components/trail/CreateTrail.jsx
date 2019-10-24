@@ -47,7 +47,7 @@ export default function CreateTrail(){
         for (let key in trailObj) {
             let formElem = (
                 <div className={`new-trail-${key}`} >
-                    <input onChange={} value={trailObj[key]}/>
+                    <input onChange={()=>{}} value={trailObj[key]}/>
                 </div>
             )
             formArr.push(formElem);

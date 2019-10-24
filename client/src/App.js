@@ -26,17 +26,17 @@ import './App.css';
 
 //Title
 import Doc from './components/Doc'
-
 function App() {
   let [search, setSearch] = useState('');
-    const searchChange = (e) => {
-      let searchValue = e.target.value;
-      setSearch(searchValue)
-    }
+  const searchChange = (e) => {
+    let searchValue = e.target.value;
+    setSearch(searchValue)
+  }
+
   return (
     
     <BrowserRouter>
-      {document.title = 'BikeStar'}
+      <Doc />
       <div className="App">
         <Nav searchChange={searchChange} search={search}/>
         <Switch>
