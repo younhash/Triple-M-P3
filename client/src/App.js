@@ -28,10 +28,7 @@ import './App.css';
 import Doc from './components/Doc'
 function App() {
   let [search, setSearch] = useState('');
-  const searchChange = (e) => {
-    let searchValue = e.target.value;
-    setSearch(searchValue)
-  }
+  const searchChange = (e) => {setSearch(e.target.value)}
 
   return (
     <BrowserRouter>
