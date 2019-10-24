@@ -20,24 +20,7 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
-a {
-  all:unset;
-}
 
-div.nav {
-  position: relative;
-  width: 100%;
-  /* display: flex; */
-  /* flex-flow: column; */
-}
-
-  /* div.nav .links {
-    width: 100%;
-    position: absolute;
-    z-index: 2;
-    margin: 20px auto;
-    top: 0;
-  } */
   div.nav .search{
     position: absolute;
     bottom: 0;
@@ -45,11 +28,8 @@ div.nav {
     width: 100%;
   }
   div.nav a {
-    background: rgba(233, 233, 233, 0.5);
     padding: 0, 0, 0, 20;
     display: inline-block;
-    width: 60px;
-    border-radius: 10px;
   }
   div.nav .search {
     position: absolute;
@@ -90,36 +70,26 @@ div.state {
 .nav {
   position: relative;
   width: 100%;
-  /* list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-   */
 }
 
+
 .links .state-trail{
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0, 0.4);
   color: white;
   font-weight: bold;
-  font-size: 10px;
+  font-size: 20px;
   position: fixed;
   top: 7%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 2;
-  width: 60%;
+  width: 45%;
   padding: 6px;
   text-align: center;
 }
 
-/* .nav a {
-  float: left;
-  margin: 5px;
-} */
-
-.links a {
+a {
   display: block;
   color: rgb(50, 46, 90);
   text-align: center;
@@ -128,15 +98,24 @@ div.state {
   text-decoration: none;
 }
 
-.links .bike-star {
+.user-menu {
+  float: right;
+  margin-right: 3px;
+  position: fixed;
+  right: 0;
+}
+
+.user-menu a {
+  margin-right: 3px;
+}
+
+.bike-star {
   color: rgb(50, 46, 90);
   text-align: left;
   position: fixed;
   left: 0;
   margin: 0 10px;
   text-decoration: none;
-  background-color: unset;
-  background-color: unset;
 }
 
 div.trail {
@@ -163,16 +142,10 @@ div.trail {
   .trail-edit-card{
     background: purple;
   }
-    .input-update-trail-description{
-      width: 90%;
-    }
-/* div.trail-list {
-  text-align: right;
-} */
+  .input-update-trail-description{
+    width: 90%;
+  }
 
-.trail-info-container {
-  flex-grow: 2;
-}
 
 form {
   /* margin: 40px, 20px, 20px, 40px; */
@@ -219,18 +192,61 @@ input[type=text]:focus, input[type=password]:focus {
   opacity: 1;
 }
 
-.user-menu {
-  float: right;
-  margin-right: 3px;
-}
-
 
 
 
 @media screen and (max-width: 600px) {
-  * {
-    box-sizing: border-box;
+  .nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
   }
+  .App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    font-size: calc(10px + 2vmin);
+    color: white;
+  }
+  .state-trail {
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0,0,0, 0.0);
+  }
+  .state-trail a{
+    padding: 0;
+    margin: 3px;
+    background-color: rgba(0,0,0, 0.0);
+  }
+  .links .state-trail{
+    color: white;
+    font-weight: bold;
+    font-size: 10px;
+    position: fixed;
+    top: 7%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 25%;
+    padding: 6px;
+    text-align: center;
+  }
+  .card-list {
+    box-sizing: border-box;
+    width: 100%;
+  }
+
+.trail-info-container {
+  box-sizing: border-box;
+  font-size: 12px;
+}
+div.trail img {
+  border-radius: 5px;
+  width: 100px;
+} 
 }
 
 @media screen and (max-width: 600px) {
