@@ -250,9 +250,18 @@ input[type=text]:focus {
     height: 150px;
   }
   .trail-info {
-    
+    flex-direction: column;
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 710px) {
+  div.trail img {
+    border-radius: 5px;
+    width: 100px;
+  } 
+
+  .trail .trail-img {
+    width: 150px;
+    height: 150px;
+  }
 }
