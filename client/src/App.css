@@ -35,7 +35,7 @@
     position: absolute;
     width: 100%;
     bottom: 0;
-    margin: 10px 0 10px 60px;
+    /* margin: 10px 0 10px 60px; */
   }
     div.nav .search input {
       background: rgba(255, 255, 255, 0);
