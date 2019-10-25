@@ -41,17 +41,19 @@ export default function Trail({props}){
         <div className='trail'>
             <img className='trail-img' src={imgMedium} alt='' />
             {/* <Map info={{trailObj}} model={'trail'} /> */}
-            <div className='trail-name'>{name}</div>
-            <div className='trail-location'>City: {city}, State: {state}</div>
-            <div className='trail-coordinates'>{latitude}, {longitude}</div>
-            <div className='trail-description'>
-                <div className="trail-length">{length}</div>
-                <div className="trail-difficulty">{difficulty}</div>
-                <div className="trail-summary">{summary}</div>
-            </div>
-            <div className="edit-toggle-container">
-                <div className="edit-toggle" onClick={() => {setEditTrailOpen(!editTrailOpen)}} >x</div>
-                {(editTrailOpen) && <EditTrail trailObj={trailObj} setTrailObj={setTrailObj} />}
+            <div className="trail-info">
+                <div className='trail-name'>{name}</div>
+                <div className='trail-location'>City: {city}, State: {state}</div>
+                <div className='trail-coordinates'>{latitude}, {longitude}</div>
+                <div className='trail-description'>
+                    <div className="trail-length">{length}</div>
+                    <div className="trail-difficulty">{difficulty}</div>
+                    <div className="trail-summary">{summary}</div>
+                </div>
+                <div className="edit-toggle-container">
+                    <div className="edit-toggle" onClick={() => {setEditTrailOpen(!editTrailOpen)}} >x</div>
+                    {(editTrailOpen) && <EditTrail trailObj={trailObj} setTrailObj={setTrailObj} />}
+                </div>
             </div>
             {/* <Map info={{trailObj}} model={'trail'} /> */}
             {/* <EditTrail trailObj={{trailObj}} /> */}
