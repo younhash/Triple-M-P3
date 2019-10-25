@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import Search from './Search';
 import BurgerMenu from './BurgerMenu';
 
-export default function Nav({searchChange, search}){
+export default function Nav({searchChange, search, useSearch}){
     // console.log(searchChange, search);
 
     let [isOpen,setIsOpen] = useState(false)
@@ -30,7 +30,7 @@ export default function Nav({searchChange, search}){
                 </div>
             </div>
             <img src='/crop-david-marcu-unsplash.jpg' alt='bike riding in the mountain' width="100%" height=""/>
-            <Search fxns={{searchChange}} search={search} />
+            {(useSearch) && <Search fxns={{searchChange}} search={search} />}
         </div>
     )
 }
